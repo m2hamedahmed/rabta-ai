@@ -46,7 +46,7 @@ h1{margin:0;font-size:25px;font-weight:600;letter-spacing:-.3px}
 .seg button{padding:9px 18px;border-radius:999px;font-size:10px;color:var(--t2);transition:.2s}
 .seg button.on{color:#fff;background:linear-gradient(90deg,#a855f7,#7c3aed);box-shadow:0 4px 16px #7c3aed66}
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
-.m{position:relative;padding:14px;border-radius:18px;border:1px solid var(--bd);background:linear-gradient(150deg,var(--g),#12071f 70%);height:112px}
+.m{position:relative;overflow:hidden;padding:14px;border-radius:18px;border:1px solid var(--bd);background:linear-gradient(150deg,var(--g),#12071f 70%);height:126px;transition:transform .22s,border-color .22s,box-shadow .22s}.m:hover{transform:translateY(-2px);border-color:#8b5cf688;box-shadow:0 10px 28px #0003}.m .market-arrow{position:absolute;right:12px;top:14px;width:78px;height:42px;opacity:.92;filter:drop-shadow(0 0 5px currentColor)}.m .market-arrow path{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.m .market-arrow .trail{opacity:.28;stroke-width:1}.m .m-foot{position:absolute;left:14px;right:12px;bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:9px;color:var(--t2)}.m .m-foot span{display:inline-flex;align-items:center;gap:5px}.m .m-foot i{width:5px;height:5px;border-radius:50%;background:var(--metric);box-shadow:0 0 8px var(--metric)}
 .m .ic{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--c2);color:#fff}
 .m h3{margin:12px 0 2px;font-size:13px;font-weight:500}
 .m .v{font-size:23px;font-weight:700;letter-spacing:-.4px}
@@ -62,11 +62,34 @@ h1{margin:0;font-size:25px;font-weight:600;letter-spacing:-.3px}
 .badge{font-size:8px;font-weight:600;padding:2px 6px;border-radius:5px;background:#22c55e22;color:var(--ok)}
 .chart{position:relative;margin-top:6px}.chart svg{width:100%;height:auto;display:block}
 .tip{position:absolute;transform:translate(-50%,-100%);background:#1c0f2e;border:1px solid var(--v);border-radius:8px;padding:4px 8px;font-size:10px;pointer-events:none;white-space:nowrap;transition:left .15s,top .15s}
-.gauge{position:relative;margin:2px auto 0;max-width:290px}.gauge svg{width:100%;display:block}
-.score{position:absolute;left:0;right:0;bottom:6%;text-align:center}
-.score b{display:block;font-size:34px;line-height:1.1}.score span{font-size:9px;color:var(--t2)}
-.lg{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin-top:14px;font-size:10px;color:var(--t2)}
-.lg div{display:flex;align-items:center;gap:7px}.lg i{width:6px;height:6px;border-radius:50%}.lg b{margin-left:auto;color:#fff;font-weight:500}
+.gauge{position:relative;margin:2px auto 0;width:min(100%,400px);aspect-ratio:1/1;height:auto;padding:0;display:flex;align-items:center;justify-content:center;isolation:isolate;filter:drop-shadow(0 12px 22px #0005)}.gauge:before{content:"";position:absolute;width:44%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#a855f755 0%,#6d28d933 48%,transparent 74%);filter:blur(13px);z-index:0}.gauge:after{content:"";position:absolute;inset:4.5%;border:1px solid #a855f71b;border-radius:50%;box-shadow:inset 0 0 28px #7c3aed0b;pointer-events:none}.gauge svg{position:absolute;inset:0;width:100%;height:100%;display:block;overflow:visible}.score{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;z-index:2;gap:7px;padding-top:2px}.score:before{display:none}.score-value{display:flex;align-items:baseline;justify-content:center;gap:3px}.score b{display:block;font-size:clamp(40px,4.6vw,57px);line-height:.95;letter-spacing:-1.8px;color:#fff;text-shadow:0 0 22px #a855f788,0 2px 12px #000;font-variant-numeric:tabular-nums;font-weight:700}.score .score-percent{display:block;font-size:clamp(17px,1.8vw,22px);line-height:1;letter-spacing:-.4px;font-weight:600;color:#cdb5ff;text-shadow:0 0 12px #a855f766;transform:translateY(-2px)}.score span:not(.score-percent){display:block;font-size:8px;line-height:1;letter-spacing:2.1px;font-weight:700;color:#cdb5ff;text-shadow:0 0 12px #a855f766}.gauge-status{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);z-index:3;white-space:nowrap;font-size:7px;letter-spacing:1.45px;font-weight:600;color:#a99abf;display:flex;align-items:center;gap:6px}.gauge-status i{width:5px;height:5px;border-radius:50%;background:#c084fc;box-shadow:0 0 9px #a855f7}.gauge svg .hud-ring{fill:none;stroke:#4b3265;stroke-width:1}.gauge svg .hud-progress{fill:none;stroke:url(#confidenceGradient);stroke-width:5;stroke-linecap:round;filter:drop-shadow(0 0 5px #a855f7)}.gauge svg .hud-tick{stroke:#8f6db3;stroke-width:1.4;opacity:.65}.gauge svg .hud-orbit{fill:none;stroke:#8b5cf7;stroke-width:.8;stroke-dasharray:2 7;opacity:.5}
+/* AI Confidence Index motion polish — scoped to the existing gauge only */
+#gauge{--needle-rotation:0deg;transition:filter .35s ease,transform .35s cubic-bezier(.2,.75,.25,1)}
+#gauge:hover{filter:drop-shadow(0 14px 27px #0007) drop-shadow(0 0 10px #8b5cf733)}
+#gauge:before{animation:confidenceCorePulse 5.8s ease-in-out infinite}
+#gauge:after{animation:confidenceRimPulse 7s ease-in-out infinite}
+#gauge svg .confidence-outer-sweep{transform-origin:250px 250px;animation:confidenceSweep 12s linear infinite;opacity:.52}
+#gauge svg .confidence-segment{animation:confidenceSegmentIn .72s cubic-bezier(.2,.7,.25,1) both;animation-delay:calc(var(--seg-i, 0) * 1.1ms)}
+#gauge svg .confidence-needle{transform-box:view-box;transform-origin:250px 250px;transform:rotate(var(--needle-rotation, 0deg));transition:transform 1.35s cubic-bezier(.16,1,.3,1);filter:drop-shadow(0 0 4px #d946ef99)}
+#gauge svg .confidence-needle.is-entering{animation:confidenceNeedleIn 1.35s cubic-bezier(.16,1,.3,1) both}
+#gauge svg .confidence-inner-rim{transform-origin:250px 250px;animation:confidenceInnerShimmer 8s ease-in-out infinite}
+#gauge .score b{animation:confidenceValueIn .9s cubic-bezier(.16,1,.3,1) both}
+#gauge .score .score-percent{animation:confidencePercentIn 1s cubic-bezier(.16,1,.3,1) both}
+#confidenceExpand{transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease}
+#confidenceExpand:hover{transform:translateY(-1px) scale(1.035);border-color:#a855f7;box-shadow:0 0 18px #a855f733}
+#confidenceExpand:active{transform:scale(.97)}
+@keyframes confidenceCorePulse{0%,100%{opacity:.72;transform:scale(.98)}50%{opacity:1;transform:scale(1.035)}}
+@keyframes confidenceRimPulse{0%,100%{box-shadow:inset 0 0 20px #7c3aed08;border-color:#a855f718}50%{box-shadow:inset 0 0 30px #7c3aed19;border-color:#a855f744}}
+@keyframes confidenceSweep{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes confidenceSegmentIn{from{opacity:.18;filter:brightness(.7)}to{opacity:1;filter:brightness(1)}}
+@keyframes confidenceNeedleIn{from{transform:rotate(0deg)}to{transform:rotate(var(--needle-rotation, 0deg))}}
+@keyframes confidenceInnerShimmer{0%,100%{opacity:.34;transform:rotate(0deg)}50%{opacity:.65;transform:rotate(8deg)}}
+@keyframes confidenceValueIn{from{opacity:.35;transform:translateY(5px);filter:blur(2px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes confidencePercentIn{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(-2px)}}
+@media(hover:hover) and (pointer:fine){#gauge:hover{transform:translateY(-2px)}}
+@media(prefers-reduced-motion:reduce){#gauge,#gauge:before,#gauge:after,#gauge svg *,#gauge .score b,#gauge .score .score-percent,#confidenceExpand{animation:none!important;transition:none!important}}
+.lg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:0;font-size:10px;color:var(--t2)}
+.lg div{display:flex;align-items:center;gap:7px;padding:10px 11px;border:1px solid #ffffff12;border-radius:11px;background:linear-gradient(120deg,#ffffff0a,#ffffff02);box-shadow:inset 0 1px 0 #ffffff05}.lg i{width:7px;height:7px;border-radius:50%;box-shadow:0 0 9px currentColor}.lg b{margin-left:auto;color:#fff;font-weight:650;font-variant-numeric:tabular-nums}
 .sh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px}
 .sh h2{margin:0;font-size:14px;font-weight:500}.sh a{font-size:10px;color:#fff;text-decoration:none;opacity:.85}.sh a:hover{color:var(--v)}
 .tools{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -196,6 +219,42 @@ dialog select{width:100%;background:#0d0418;border:1px solid var(--bd);border-ra
 .journey{margin-top:14px;background:#10051b}.journey-track{position:relative;margin-top:8px;padding:4px 2px 0}.journey-svg{display:block;width:100%;height:88px;overflow:visible}.journey-path-bg{fill:none;stroke:#38234b;stroke-width:3;stroke-linecap:round}.journey-path{fill:none;stroke:#8b5cf6;stroke-width:2;stroke-dasharray:7 9;stroke-linecap:round;opacity:.8}.journey-dot{fill:#f3e8ff;stroke:#a855f7;stroke-width:4;filter:drop-shadow(0 0 5px #a855f7)}.journey-stages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:-5px}.journey-stage{min-width:0;text-align:left;display:grid;gap:5px;padding:10px;border:1px solid var(--bd);border-radius:12px;background:#160a23;color:var(--t2);transition:border-color .2s,background .2s,transform .2s}.journey-stage span{font-size:10px;color:#c084fc;letter-spacing:.08em}.journey-stage b{font-size:12px;color:var(--t)}.journey-stage small{font-size:10px;line-height:1.4}.journey-stage.active{border-color:#a855f7;background:#241039;transform:translateY(-2px)}.journey-status{font-size:11px;color:var(--t2);margin:10px 2px 0}@media(max-width:620px){.journey-svg{height:54px}.journey-stages{grid-template-columns:1fr;gap:6px;margin-top:0}.journey-stage{grid-template-columns:35px 1fr;align-items:center}.journey-stage span{grid-row:span 2}.journey-stage small{grid-column:2}.journey .ph{align-items:flex-start;gap:10px}}
 
 .ana-records{display:grid;gap:8px}.ana-record{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px;border:1px solid var(--bd);border-radius:10px;background:#0c0413;min-width:0}.ana-record>div:first-child{min-width:0}.ana-record b{display:block;font-size:10px;overflow-wrap:anywhere}.ana-record small{display:block;font-size:9px;color:var(--t3);line-height:1.5;margin-top:4px}.ana-record .ac{display:flex;gap:5px;flex-shrink:0}.ana-record .ac button{font-size:9px;padding:6px 8px;border:1px solid var(--bd);border-radius:7px;color:var(--t2)}.ana-card-head{flex-wrap:wrap}.ana-date select{max-width:145px}@media(max-width:620px){.ana-record{align-items:flex-start;flex-direction:column}.ana-record .ac{width:100%}.ana-record .ac button{flex:1}}
+
+.journey-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.journey-fields label{display:block;font-size:12px;color:var(--t2);margin-bottom:6px}.journey-fields input,.journey-fields textarea,.journey-fields select{width:100%;background:#160a22;color:var(--t);border:1px solid var(--bd);border-radius:9px;padding:10px;font:inherit;min-width:0}.journey-fields textarea{min-height:78px;resize:vertical}.journey-fields .wide{grid-column:1/-1}@media(max-width:600px){.journey-fields{grid-template-columns:1fr}.journey-fields .wide{grid-column:auto}}
+
+/* Experimental reference-led dashboard layout; retains RABTA's existing palette and handlers. */
+#v-dash{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"welcome" "cards" "performance" "toolhead" "tools" "note" "recent" "rail";gap:14px;align-items:start;}
+#v-dash>.welcome{grid-area:welcome;margin-bottom:0;min-width:0}
+#v-dash>#cards{grid-area:cards;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0}
+#v-dash>.row{grid-area:performance;grid-template-columns:minmax(0,1.35fr) minmax(300px,.9fr);gap:14px;margin:0}
+#v-dash>.sh{grid-area:toolhead;margin:2px 0 0}
+#v-dash>#tools{grid-area:tools;align-self:start;margin-top:0;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#v-dash>.note{grid-area:note;margin:0;text-align:left}
+.dash-rail{grid-area:rail;display:grid;grid-template-columns:1fr;gap:14px;min-width:0;margin-top:0}
+#dashRecentCampaigns{grid-area:recent;min-width:0;background:linear-gradient(125deg,#160922,#10051b 58%,#1b0b2d);border-color:#43245e;padding:18px 20px}
+#dashRecentCampaigns .rail-head h2{font-size:15px}
+#dashRecentCampaigns .rail-campaign{grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:12px;padding:12px 4px}
+#dashRecentCampaigns .rail-thumb{width:44px;height:44px;border:1px solid #563178;background:linear-gradient(145deg,#3b1c5c,#211034);box-shadow:inset 0 0 18px #a855f722}
+#dashRecentCampaigns .rail-campaign b{font-size:12px}
+#dashRecentCampaigns .rail-campaign small{font-size:10px}
+#dashRecentCampaigns .rail-status{font-size:9px;padding:5px 9px}
+.rail-panel{background:linear-gradient(160deg,#16092a,var(--panel) 55%);border:1px solid var(--bd);border-radius:16px;padding:14px;min-width:0}
+.rail-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+.rail-head h2{font-size:13px;font-weight:600;margin:0}
+.rail-link{font-size:10px;color:var(--v);padding:4px 0}
+.rail-campaign{display:grid;grid-template-columns:38px minmax(0,1fr);gap:9px;padding:10px 0;border-bottom:1px solid var(--bd)}
+.rail-campaign:last-child{border-bottom:0;padding-bottom:0}
+.rail-thumb{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:#2a1445;color:#d8b4fe;font-size:17px}
+.rail-campaign b{display:block;font-size:11px;line-height:1.4;overflow-wrap:anywhere}
+.rail-campaign small{display:block;color:var(--t3);font-size:9px;margin-top:4px;line-height:1.5}
+.rail-status{display:inline-block;font-size:8px;border-radius:999px;padding:3px 7px;background:#7c3aed22;color:#d8b4fe;margin-top:5px}
+.rail-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.rail-action{min-height:82px;border:1px solid #352047;border-radius:12px;background:#130721;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;font-size:10px;color:var(--t2);padding:8px;transition:border-color .2s,background .2s}
+.rail-action:hover{border-color:var(--v);background:#201036;color:#fff}
+.rail-icon{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#2b1250;color:#c084fc;font-size:19px}
+@media(max-width:1100px){#v-dash{grid-template-columns:minmax(0,1fr) 230px}#v-dash>#cards{grid-template-columns:repeat(2,minmax(0,1fr))}#v-dash>.row{grid-template-columns:1fr}}
+@media(max-width:850px){#v-dash{display:flex;flex-direction:column}#v-dash>.welcome,#v-dash>#cards,#v-dash>.row,#v-dash>.sh,#v-dash>#tools,#v-dash>.note,.dash-rail,#dashRecentCampaigns{width:100%}#v-dash>.welcome{order:0}#v-dash>#cards{order:1}#v-dash>.row{order:2}#v-dash>.sh{order:3}#v-dash>#tools{order:4;margin-top:0}#v-dash>.note{order:5}#dashRecentCampaigns{order:6}.dash-rail{order:7;grid-template-columns:1fr}}
+@media(max-width:560px){#v-dash>#cards,#v-dash>#tools{grid-template-columns:repeat(2,minmax(0,1fr))}.dash-rail{grid-template-columns:1fr}.rail-actions{grid-template-columns:repeat(3,minmax(0,1fr))}.rail-action{min-height:75px}#v-dash>.welcome .seg{flex-wrap:wrap}}
 </style></head>
 <body>
 <div class="scrim" id="scrim"></div>
@@ -223,22 +282,29 @@ dialog select{width:100%;background:#0d0418;border:1px solid var(--bd);border-ra
   <section class="panel" id="v-set" hidden></section>
   <section class="panel" id="v-agents" hidden></section>
   <section class="panel" id="v-tasks" hidden></section>
-  <section class="panel" id="v-cmp" hidden></section>
+  <section class="panel" id="v-cmp" hidden><div id="campaignList"></div>
+   <section class="panel journey" aria-labelledby="journey-title">
+    <div class="ph"><div><h2 id="journey-title">Campaign Journey</h2><p class="sub" style="margin-top:4px">Build and manage a real campaign plan from this dashboard.</p></div><button class="btn" type="button" id="journeyNew">+ New journey</button></div>
+    <div class="journey-track" id="journeyTrack">
+     <div class="journey-stages"><button type="button" class="journey-stage active" data-stage="0"><span>01</span><b>Plan</b><small>Goal, audience, budget</small></button><button type="button" class="journey-stage" data-stage="1"><span>02</span><b>Create</b><small>Content brief</small></button><button type="button" class="journey-stage" data-stage="2"><span>03</span><b>Schedule</b><small>Dates and channel</small></button><button type="button" class="journey-stage" data-stage="3"><span>04</span><b>Launch</b><small>Readiness checklist</small></button><button type="button" class="journey-stage" data-stage="4"><span>05</span><b>Analyse</b><small>Results and learnings</small></button></div>
+     <div id="journeyEditor" class="journey-editor" style="margin-top:16px;border:1px solid var(--bd);border-radius:14px;padding:16px;background:#0c0415">
+      <div id="journeyStageTitle" style="font-weight:700;font-size:17px;margin-bottom:12px">01 · Plan your campaign</div>
+      <div id="journeyFields" class="journey-fields"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px"><button class="btn" type="button" id="journeyBack">Back</button><button class="btn" type="button" id="journeyNext">Next stage</button><button class="btn" type="button" id="journeySave">Save campaign</button><button class="btn g" type="button" id="journeyOpenCampaigns">View campaigns</button></div>
+      <p class="journey-status" id="journeyStatus" aria-live="polite" style="margin-top:12px">Fill in the plan and save it to your workspace. External publishing is not connected.</p>
+     </div>
+     <div id="journeySaved" style="margin-top:14px"></div>
+    </div>
+   </section>
+</section>
   <section class="panel" id="v-cal" hidden></section>
   <section class="panel" id="v-studio" hidden></section>
   <section class="panel" id="v-clients" hidden></section>
   <section class="panel" id="v-dash">
-   <div class="welcome"><div><h1>Welcome back, <span id="wn">there</span></h1><p class="sub">Here’s what’s happening with your AI today</p></div>
+   <div class="welcome"><div><h1>Welcome back, <span id="wn">there</span></h1><p class="sub">Here’s what’s happening with your AI today</p></div><button class="btn g" type="button" id="openCampaignJourney">Open Campaign Journey ↗</button>
     <div class="seg" id="seg"><button class="on">AI Active</button><button>Generate New</button><button>Analyse Data</button><button>Upload</button></div></div>
    <div class="cards" id="cards"></div>
-   <section class="panel journey" aria-labelledby="journey-title">
-    <div class="ph"><div><h2 id="journey-title">Campaign Journey</h2><p class="sub" style="margin-top:4px">A visual preview of your marketing workflow</p></div><button class="btn" type="button" id="journeyRun">Run preview</button></div>
-    <div class="journey-track" id="journeyTrack">
-     <svg class="journey-svg" viewBox="0 0 900 110" role="img" aria-label="Animated path connecting campaign workflow stages" preserveAspectRatio="none"><path class="journey-path-bg" d="M55 55 C150 5 190 105 280 55 S410 5 505 55 S640 105 730 55 S820 20 850 55"/><path class="journey-path" d="M55 55 C150 5 190 105 280 55 S410 5 505 55 S640 105 730 55 S820 20 850 55"/><circle class="journey-dot" r="7" cx="55" cy="55"><animateMotion id="journeyMotion" dur="5s" repeatCount="indefinite" path="M0 0 C95 -50 135 50 225 0 S355 -50 450 0 S585 50 675 0 S765 -35 795 0"/></circle></svg>
-     <div class="journey-stages"><button type="button" class="journey-stage active" data-stage="0"><span>01</span><b>Plan</b><small>Set the campaign goal</small></button><button type="button" class="journey-stage" data-stage="1"><span>02</span><b>Create</b><small>Prepare content</small></button><button type="button" class="journey-stage" data-stage="2"><span>03</span><b>Schedule</b><small>Choose publishing time</small></button><button type="button" class="journey-stage" data-stage="3"><span>04</span><b>Launch</b><small>Publish the campaign</small></button><button type="button" class="journey-stage" data-stage="4"><span>05</span><b>Analyse</b><small>Review results</small></button></div>
-     <p class="journey-status" id="journeyStatus" aria-live="polite">Preview stage: Plan · This is a visual demo and does not publish campaigns.</p>
-    </div>
-   </section>
+
    <div class="row">
     <div class="panel" style="background:#10051b">
      <div class="ph"><h2>AI Performance Index</h2><button class="btn" type="button" id="perfManage">Manage data</button></div>
@@ -247,13 +313,24 @@ dialog select{width:100%;background:#0d0418;border:1px solid var(--bd);border-ra
     </div>
     <div class="panel" style="background:#10051b">
      <div class="ph"><h2>AI Confidence Index</h2><button class="exp" type="button" aria-label="Expand AI Confidence Index" id="confidenceExpand"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button></div>
-     <div class="gauge" id="gauge"><div class="score"><b id="indexScore">0%</b><span>Overall Score</span></div></div>
+     <div class="gauge" id="gauge"><div class="score"><div class="score-value"><b id="indexScore">0</b><em class="score-percent">%</em></div><span>CONFIDENCE INDEX</span></div><div class="gauge-status"><i></i> WORKSPACE SIGNAL</div></div>
      <div class="lg" id="lg"></div>
     </div>
    </div>
    <div class="sh"><div><h2>AI Performance Index</h2><p class="sub" style="margin-top:4px">Choose from our suite of AI-powered tools</p></div><a href="#" id="all">See All</a></div>
    <div class="tools" id="tools"></div>
    <p class="note" id="dash_note">The chart uses data you enter; the index is calculated from saved workspace records.</p>
+   <aside class="dash-rail" id="dashRail">
+    <section class="rail-panel"><div class="rail-head"><h2>Quick Actions</h2><span class="sub">Shortcuts</span></div><div class="rail-actions">
+     <button type="button" class="rail-action" data-go="campaigns"><span class="rail-icon">＋</span><span>Create<br>Campaign</span></button>
+     <button type="button" class="rail-action" data-go="ai-studio"><span class="rail-icon">✧</span><span>Generate<br>Content</span></button>
+     <button type="button" class="rail-action" data-go="automation"><span class="rail-icon">↯</span><span>Automation</span></button>
+     <button type="button" class="rail-action" data-go="analytics"><span class="rail-icon">▥</span><span>View<br>Analytics</span></button>
+     <button type="button" class="rail-action" data-go="clients"><span class="rail-icon">♙</span><span>Manage<br>Clients</span></button>
+     <button type="button" class="rail-action" id="railJourney"><span class="rail-icon">➜</span><span>Campaign<br>Journey</span></button>
+    </div></section>
+   </aside>
+   <section class="rail-panel" id="dashRecentCampaigns"><div class="rail-head"><div><h2>Recent Campaigns</h2><p class="sub" style="margin-top:4px">Your latest campaign activity, all in one place.</p></div><button type="button" class="rail-link" id="railViewCampaigns">View all&nbsp; ↗</button></div><div id="railCampaigns"><div class="empty">Loading campaigns…</div></div></section>
   </section>
  </div>
 </div>
@@ -305,6 +382,7 @@ const toast=t=>{const e=$('#toast');e.textContent=t;e.classList.add('on');clearT
  const b=document.createElement('button');b.innerHTML=ic(k)+n;if(!i)b.className='on';
  b.dataset.n=n;b.onclick=()=>{location.hash=n==='Dashboard'?'':n.toLowerCase().replace(' ','-');closeSide()};
  $('#nav').append(b)});
+const openJourney=$('#openCampaignJourney');if(openJourney)openJourney.onclick=()=>{location.hash='campaigns'};
 const side=$('#side'),sc=$('#scrim');
 function closeSide(){side.classList.remove('open');sc.classList.remove('open')}
 $('#burger').onclick=()=>{side.classList.add('open');sc.classList.add('open')};sc.onclick=closeSide;
@@ -328,29 +406,22 @@ function renderDashboard(){
  const tasks=Array.isArray(DB.tasks)?DB.tasks:[],campaigns=Array.isArray(DB.cmp)?DB.cmp:[],calendar=Array.isArray(DB.cal)?DB.cal:[];
  const open=tasks.filter(x=>x.status!=='Done').length,done=tasks.filter(x=>x.status==='Done').length;
  const metrics=[['Active clients',clients.length,'u','#f59e0b','#3a1d0a','#4a2a12'],['Open tasks',open,'ck','#8b5cf6','#2a1450','#3b2070'],['Campaigns',campaigns.length,'c','#2dd4bf','#0c2a33','#143c47'],['Completed tasks',done,'tg','#d946ef','#3a1250','#4d1a66']];
- cards.innerHTML=metrics.map(([label,value,icon,col,g,c2],i)=>`<div class="m" style="--g:${g};--c2:${c2}"><div class="ic">${ic(icon)}</div><h3>${label}</h3><div class="v">${value}</div><div class="tr">Based on saved records</div></div>`).join('');
+ cards.innerHTML=metrics.map(([label,value,icon,col,g,c2],i)=>`<div class="m" style="--g:${g};--c2:${c2};--metric:${col}"><div class="ic">${ic(icon)}</div><svg class="market-arrow" viewBox="0 0 86 44" aria-hidden="true" style="color:${col}"><path class="trail" d="M3 35 L17 29 L28 32 L40 19 L51 23 L65 9 L81 5"/><path d="M3 35 L17 29 L28 32 L40 19 L51 23 L65 9 L81 5 M69 5 H81 V17"/></svg><h3>${label}</h3><div class="v">${value}</div><div class="m-foot"><span><i></i>Workspace total</span><span>↗</span></div></div>`).join('');
  const actions=[['AI Image Generator','img','ai-studio','Create image prompts and assets.'],['Text Generator','doc','ai-studio','Draft and refine content.'],['Data Analyzer','a','analytics','Review your workspace data.'],['Code Assistant','code','assistant','Open the assistant workspace.']];
  tools.innerHTML=actions.map(([label,icon,go,desc])=>`<button class="tool" data-go="${go}"><div class="h"><span class="ic">${ic(icon)}</span>${label}</div><p>${desc}</p><svg class="ar" viewBox="0 0 24 24">${I.ar}</svg></button>`).join('');
  const cloud= !supa?'Supabase client not initialized':!currentUser?'Not signed in':!cloudReady?'Cloud sync is loading or unavailable':'Signed in; configured cloud tables sync when saved';
  const note=$('#dash_note'); if(note)note.textContent=`Live workspace counts: ${clients.length} clients · ${open} open tasks · ${campaigns.length} campaigns · ${calendar.length} calendar items. Cloud: ${cloud}. AI tools require a configured endpoint.`;
+ const rail=$('#railCampaigns');if(rail){const recent=[...campaigns].sort((a,b)=>String(b.updatedAt||b.start||'').localeCompare(String(a.updatedAt||a.start||''))).slice(0,5);rail.innerHTML=recent.length?recent.map(c=>{const st=String(c.status||'Planned');const name=String(c.name||'Untitled campaign');const details=[c.goal,c.start&&('Starts '+c.start)].filter(Boolean).join(' · ');return `<div class="rail-campaign"><span class="rail-thumb">◈</span><div><b>${esc(name)}</b><small>${esc(details||'Campaign workspace record')}</small><span class="rail-status">${esc(st)}</span></div></div>`}).join(''):'<div class="empty" style="padding:20px 4px">No saved campaigns yet.<br><button type="button" class="btn" style="margin-top:10px" data-go="campaigns">Create campaign</button></div>';}
 }
 
-// Interactive campaign journey preview; visual only, no campaign is published.
-(function(){
- const stages=[...document.querySelectorAll('.journey-stage')],status=document.getElementById('journeyStatus'),run=document.getElementById('journeyRun'),motion=document.getElementById('journeyMotion');
- if(!stages.length||!status||!run)return;let active=0,timer=null;
- const names=['Plan','Create','Schedule','Launch','Analyse'];
- function selectStage(i){active=(i+stages.length)%stages.length;stages.forEach((b,j)=>{b.classList.toggle('active',j===active);b.setAttribute('aria-pressed',j===active?'true':'false')});status.textContent='Preview stage: '+names[active]+' · This is a visual demo and does not publish campaigns.'}
- stages.forEach((b)=>b.addEventListener('click',()=>{clearInterval(timer);timer=null;run.textContent='Run preview';selectStage(Number(b.dataset.stage))}));
- run.addEventListener('click',()=>{if(timer){clearInterval(timer);timer=null;run.textContent='Run preview';return}selectStage(0);if(motion&&motion.beginElement)motion.beginElement();run.textContent='Stop preview';timer=setInterval(()=>selectStage(active+1),1000)});
- document.addEventListener('visibilitychange',()=>{if(document.hidden&&timer){clearInterval(timer);timer=null;run.textContent='Run preview'}});
-})();
 document.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b&&b.dataset.go)location.hash=b.dataset.go});
+const railView=$('#railViewCampaigns');if(railView)railView.addEventListener('click',()=>location.hash='campaigns');
+const railJourney=$('#railJourney');if(railJourney)railJourney.addEventListener('click',()=>{location.hash='campaigns';setTimeout(()=>$('#journeyNew')?.click(),80)});
 // Dashboard performance chart: real user-entered records, never fabricated values.
 const PERF_KEY='rabta.performance.monthly';
 let perfEditId=null;
 function getPerfRecords(){try{const x=JSON.parse(localStorage.getItem(PERF_KEY)||'[]');return Array.isArray(x)?x:[]}catch(e){return []}}
-function savePerfRecords(rows){try{localStorage.setItem(PERF_KEY,JSON.stringify(rows));return true}catch(e){toast('Could not save: browser storage may be full');return false}}
+function savePerfRecords(rows){try{localStorage.setItem(PERF_KEY,JSON.stringify(rows));if(typeof queueWorkspaceSync==='function')queueWorkspaceSync();return true}catch(e){toast('Could not save: browser storage may be full');return false}}
 function renderPerfChart(){
  const c=$('#chart'); if(!c)return;
  const rows=getPerfRecords().filter(x=>x&&/^\d{4}-\d{2}$/.test(x.month)&&Number.isFinite(Number(x.value))&&Number(x.value)>=0).sort((a,b)=>a.month.localeCompare(b.month)).slice(-7);
@@ -377,22 +448,62 @@ function renderWorkspaceIndex(){
  const clientScore=clients.length?clients.filter(c=>String(c.name||'').trim()&&String(c.industry||'').trim()).length/clients.length*100:0;
  const campaignScore=campaigns.length?campaigns.filter(c=>c.status==='Active').length/campaigns.length*100:0;
  const score=Math.round(taskScore*.5+clientScore*.3+campaignScore*.2);
- const scoreEl=$('#indexScore');if(scoreEl)scoreEl.textContent=score+'%';
+ const gaugeScore=Math.max(0,Math.min(100,Math.round(Number(score)||0)));
+ const scoreEl=$('#indexScore');if(scoreEl){
+  if(!scoreEl.dataset.motionInitialized && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+   scoreEl.dataset.motionInitialized='1';const started=performance.now(),duration=1050;
+   const tick=(now)=>{const p=Math.min(1,(now-started)/duration),eased=1-Math.pow(1-p,3);scoreEl.textContent=String(Math.round(gaugeScore*eased));if(p<1)requestAnimationFrame(tick);else scoreEl.textContent=String(gaugeScore)};
+   scoreEl.textContent='0';requestAnimationFrame(tick);
+  }else scoreEl.textContent=String(gaugeScore);
+ }
+ const scoreCaption=$('#gauge')?.parentElement?.querySelector('.score span');if(scoreCaption)scoreCaption.textContent='';
  const reliabilityScore=Math.round((taskScore+clientScore+campaignScore)/3);
- const lg=$('#lg');if(lg)lg.innerHTML=[['Performance',Math.round(taskScore),'#c8f03c'],['Accuracy',Math.round(clientScore),'#3b9cff'],['Efficiency',Math.round(campaignScore),'#2dd4bf'],['Reliability',reliabilityScore,'#d946ef']].map(([n,v,c])=>`<div><i style="background:${c}"></i>${n}<b>${v}%</b></div>`).join('');
+ const lg=$('#lg');if(lg)lg.innerHTML=[['Performance',Math.round(taskScore),'#a855f7'],['Accuracy',Math.round(clientScore),'#7c3aed'],['Efficiency',Math.round(campaignScore),'#c084fc'],['Reliability',reliabilityScore,'#6d28d9']].map(([n,v,c])=>`<div><i style="background:${c}"></i>${n}<b>${v}%</b></div>`).join('');
  const gauge=$('#gauge');if(gauge){
   const old=gauge.querySelector('svg');if(old)old.remove();
-  // Restore the original multicolor segmented confidence-gauge artwork.
-  const cx=150,cy=150,N=44,cols=[[0,78],[.35,170],[.65,215],[1,310]];
-  const hue=f=>{for(let i=1;i<cols.length;i++)if(f<=cols[i][0]){const a=cols[i-1],b=cols[i];return a[1]+(b[1]-a[1])*(f-a[0])/(b[0]-a[0])}return 310};
-  let svg='<svg viewBox="0 0 300 175" aria-hidden="true">';
-  for(let i=0;i<N;i++){const f=i/(N-1),a=Math.PI*(1-f),r1=96,r2=96+(i%2?16:22),c=Math.cos(a),n=Math.sin(a);svg+=`<line x1="${cx+c*r1}" y1="${cy-n*r1}" x2="${cx+c*(r2+4)}" y2="${cy-n*(r2+4)}" stroke="hsl(${hue(f)} 90% 58%)" stroke-width="4.2" stroke-linecap="round"/>`}
-  for(let i=0;i<60;i++){const a=Math.PI*(1-i/59);svg+=`<circle cx="${cx+Math.cos(a)*82}" cy="${cy-Math.sin(a)*82}" r="1.2" fill="hsl(${hue(i/59)} 80% 60%)" opacity=".75"/>`}
-  [['0',150,12,'middle'],['-50',78,30,'middle'],['-50',222,30,'middle'],['-100',16,106,'middle'],['-50',284,106,'middle']].forEach(([t,x,y,a])=>svg+=`<text x="${x}" y="${y}" text-anchor="${a}" fill="#B7A9C8" font-size="9">${t}</text>`);
-  gauge.insertAdjacentHTML('afterbegin',svg+'</svg>');
+  const cx=250,cy=250,outer=190;
+  const polar=(r,a)=>[cx+Math.cos(a*Math.PI/180)*r,cy+Math.sin(a*Math.PI/180)*r];
+  const point=(r,a)=>polar(r,a).map(v=>v.toFixed(2)).join(' ');
+  let svg=`<svg viewBox="0 0 500 500" role="img" aria-label="AI Confidence Index circular meter"><defs>
+   <linearGradient id="confidenceGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset=".55" stop-color="#a855f7"/><stop offset="1" stop-color="#d8b4fe"/></linearGradient>
+   <linearGradient id="tileGlow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a855f7"/><stop offset=".5" stop-color="#7c3aed"/><stop offset="1" stop-color="#321052"/></linearGradient>
+   <radialGradient id="confidenceCore"><stop offset="0" stop-color="#10051b"/><stop offset=".76" stop-color="#09030f"/><stop offset="1" stop-color="#180a29"/></radialGradient>
+   <filter id="confidenceGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>`;
+  // Subtle technical halo and calibration marks keep the reference geometry while sharpening the finish.
+  svg+=`<circle cx="${cx}" cy="${cy}" r="211" fill="none" stroke="#8b5cf7" stroke-width=".7" opacity=".22" stroke-dasharray="1 5"/>`;
+  for(let i=0;i<72;i++){const a=-90+i*5,p1=polar(i%6===0?202:205,a),p2=polar(209,a);svg+=`<line x1="${p1[0].toFixed(2)}" y1="${p1[1].toFixed(2)}" x2="${p2[0].toFixed(2)}" y2="${p2[1].toFixed(2)}" stroke="${i%6===0?'#a78bfa':'#6d28d9'}" stroke-width="${i%6===0?'1.5':'.7'}" opacity="${i%6===0?'.7':'.28'}"/>`}
+  // Outer segmented ring — same structure as the supplied reference.
+  for(let i=0;i<56;i++){
+   const a1=-90+i*360/56+0.8,a2=-90+(i+1)*360/56-0.8;
+   const p1=polar(outer,a1),p2=polar(outer,a2),p3=polar(outer+15,a2),p4=polar(outer+15,a1);
+   svg+=`<path d="M${p1[0].toFixed(2)} ${p1[1].toFixed(2)} L${p2[0].toFixed(2)} ${p2[1].toFixed(2)} L${p3[0].toFixed(2)} ${p3[1].toFixed(2)} L${p4[0].toFixed(2)} ${p4[1].toFixed(2)} Z" fill="${i%4===0?'#563080':'#392052'}" stroke="#100719" stroke-width="1.5"/>`;
+  }
+  // Concentric tiled arc, intentionally open at lower-right like the reference image.
+  const aStart=-150,aEnd=132,rows=7,cols=52,rIn=108,rOut=164;
+  for(let row=0;row<rows;row++){
+   const ri=rIn+row*(rOut-rIn)/rows+1.2,ro=rIn+(row+1)*(rOut-rIn)/rows-1.2;
+   for(let col=0;col<cols;col++){
+    const a1=aStart+col*(aEnd-aStart)/cols+0.65,a2=aStart+(col+1)*(aEnd-aStart)/cols-0.65;
+    const q1=polar(ri,a1),q2=polar(ri,a2),q3=polar(ro,a2),q4=polar(ro,a1);
+    const active=(col/cols)<(gaugeScore/100*.94+.02);
+    const fill=active?(row<2?'#5b2b9c':row<5?'url(#tileGlow)':'#7c32c5'):'#241332';
+    svg+=`<path class="confidence-segment" style="--seg-i:${row*cols+col}" d="M${q1[0].toFixed(2)} ${q1[1].toFixed(2)} L${q2[0].toFixed(2)} ${q2[1].toFixed(2)} L${q3[0].toFixed(2)} ${q3[1].toFixed(2)} L${q4[0].toFixed(2)} ${q4[1].toFixed(2)} Z" fill="${fill}" stroke="#100719" stroke-width="1.8" opacity="${active?'.98':'.88'}"/>`;
+   }
+  }
+  // Thin circular rim and the bright magenta pointer seen in the reference.
+  svg+=`<circle cx="${cx}" cy="${cy}" r="169" fill="none" stroke="#7c3aed" stroke-width="1.6" opacity=".82" filter="url(#confidenceGlow)"/><circle class="confidence-outer-sweep" cx="${cx}" cy="${cy}" r="176" fill="none" stroke="#e9d5ff" stroke-width="2" stroke-linecap="round" stroke-dasharray="34 1072" opacity=".52"/><circle class="confidence-inner-rim" cx="${cx}" cy="${cy}" r="84" fill="none" stroke="#a855f7" stroke-width=".8" opacity=".34" stroke-dasharray="1 5"/>`;
+  // Needle uses the same clamped score and the exact 282-degree sweep as the segmented arc.
+  const pointerAngle=-150,pA=polar(89,pointerAngle),pB=polar(166,pointerAngle);
+  const needleRotation=(gaugeScore/100)*282;
+  gauge.style.setProperty('--needle-rotation',`${needleRotation}deg`);
+  svg+=`<path class="confidence-needle is-entering" d="M${pA[0].toFixed(2)} ${pA[1].toFixed(2)} L${pB[0].toFixed(2)} ${pB[1].toFixed(2)}" stroke="#d946ef" stroke-width="4.5" stroke-linecap="round" filter="url(#confidenceGlow)"/>`;
+  // Central dark glass disc with violet neon rim.
+  svg+=`<circle cx="${cx}" cy="${cy}" r="79" fill="url(#confidenceCore)" stroke="#8b5cf7" stroke-width="4" filter="url(#confidenceGlow)"/><circle cx="${cx}" cy="${cy}" r="73" fill="none" stroke="#4c1d95" stroke-width="1.3" opacity=".9"/>`;
+  svg+='</svg>';
+  gauge.insertAdjacentHTML('afterbegin',svg);
  }
 }
-addEventListener('resize',()=>{});
 // tools
 [['AI Image Generator','img','Create stunning images from text prompts.'],['Text Generator','doc','Generate high-quality content instantly.'],['Data Analyzer','a','Analyze complex data and gain insights with AI.'],['Code Assistant','code','Generate, fix, and improve code with smart AI support.']].forEach(([n,k,d])=>{
  const b=document.createElement('button');b.className='tool';b.innerHTML=`<div class="h"><span class="ic">${ic(k)}</span>${n}</div><p>${d}</p><svg class="ar" viewBox="0 0 24 24">${I.ar}</svg>`;b.onclick=()=>toast(n+' is a demo card — not connected to AI yet');$('#tools').append(b)});
@@ -460,7 +571,16 @@ $('#v-studio').addEventListener('click',async e=>{const b=e.target.closest('butt
 document.querySelectorAll('#all').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();location.hash='ai-studio'}));
 // ---- shared data: campaigns & calendar (per client, saved in this browser only) ----
 const DK='rabta.data';let DB={cmp:[],cal:[]},calM=new Date();calM.setDate(1);
-try{const j=JSON.parse(localStorage.getItem(DK)||'null');if(j&&typeof j==='object')DB={...DB,...j}}catch(e){}
+try{const j=JSON.parse(localStorage.getItem(DK)||'null');if(j&&typeof j==='object'&&!Array.isArray(j))DB={...DB,...j}}catch(e){console.warn('RABTA local workspace data could not be parsed; defaults will be used.',e)}
+// Normalize older workspace versions before any section reads them. This preserves existing values
+// while preventing missing collections (e.g. chats/agents) from crashing the app on startup.
+DB.cmp=Array.isArray(DB.cmp)?DB.cmp:[];DB.cal=Array.isArray(DB.cal)?DB.cal:[];
+DB.tasks=Array.isArray(DB.tasks)?DB.tasks:[];DB.agents=Array.isArray(DB.agents)?DB.agents:[];
+DB.models=Array.isArray(DB.models)?DB.models:[];DB.chats=Array.isArray(DB.chats)?DB.chats:[];
+DB.sales=Array.isArray(DB.sales)?DB.sales:[];DB.platformMetrics=Array.isArray(DB.platformMetrics)?DB.platformMetrics:[];
+DB.auto=DB.auto&&typeof DB.auto==='object'?DB.auto:{on:{},log:[],last:{}};
+DB.auto.on=DB.auto.on&&typeof DB.auto.on==='object'?DB.auto.on:{};DB.auto.log=Array.isArray(DB.auto.log)?DB.auto.log:[];DB.auto.last=DB.auto.last&&typeof DB.auto.last==='object'?DB.auto.last:{};
+DB.asst=DB.asst&&typeof DB.asst==='object'?DB.asst:{lang:'en'};if(!['en','ar'].includes(DB.asst.lang))DB.asst.lang='en';
 const saveD=()=>{try{localStorage.setItem(DK,JSON.stringify(DB))}catch(e){toast('Could not save locally: browser storage may be full')} ['tasks','cmp'].forEach(k=>queueCloudSync(k,DB[k]||[])); queueWorkspaceSync();},uid=()=>'i'+Date.now()+Math.random().toString(36).slice(2,6);
 const CS=['Planned','Active','Paused','Done'],PS=['Idea','Draft','Scheduled','Posted'],SC={Planned:'#38bdf8',Active:'#22c55e',Paused:'#f59e0b',Done:'#a855f7',Idea:'#38bdf8',Draft:'#f59e0b',Scheduled:'#a855f7',Posted:'#22c55e'};
 const d2=$('#dg2');let d2s=null,d2d=null;
@@ -472,7 +592,7 @@ function form2(title,fs,v,onSave,onDel){$('#d2t').textContent=title;$('#d2e').te
 $('#d2c').onclick=()=>d2.close();$('#d2s').onclick=()=>d2s();$('#d2x').onclick=()=>d2d();
 const mine=k=>DB[k].filter(x=>x.cid===ACT),cname=()=>esc((CL.find(c=>c.id===ACT)||{}).name||''),noClient='<div class="empty">Select or add a client first in Clients &amp; Brands.</div>';
 // campaigns
-function renderCmp(){const v=$('#v-cmp');if(!ACT){v.innerHTML=noClient;return}const l=mine('cmp').sort((a,b)=>(a.start||'').localeCompare(b.start||''));
+function renderCmp(){const v=$('#campaignList');if(!v)return;if(!ACT){v.innerHTML=noClient;return}const l=mine('cmp').sort((a,b)=>(a.start||'').localeCompare(b.start||''));
  v.innerHTML=`<div class="ch"><div><h1>Campaigns</h1><p class="sub">For ${cname()}. Sign in to sync changes to Supabase.</p></div><button class="btn" id="nc2">New campaign</button></div>`+(l.length?`<div class="cg">${l.map(c=>`<div class="cc" data-id="${c.id}"><h3>${esc(c.name)}</h3><div><span class="chip" style="color:${SC[c.status]}">${c.status}</span></div><div>${esc(c.start||'No start')} \u2192 ${esc(c.end||'No end')}</div><div>Goal: ${esc(c.goal||'\u2014')}</div><div class="ac"><button data-a="e">Edit</button></div></div>`).join('')}</div>`:`<div class="empty">No campaigns yet for this client.</div>`)}
 const CF=[{k:'name',l:'Campaign name',t:'text',r:1},{k:'status',l:'Status',t:'select',o:CS.map(s=>[s,s]),d:'Planned'},{k:'start',l:'Start date',t:'date'},{k:'end',l:'End date',t:'date'},{k:'goal',l:'Goal',t:'textarea'}];
 $('#v-cmp').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const card=b.closest('.cc'),c=card&&DB.cmp.find(x=>x.id===card.dataset.id);
@@ -490,16 +610,28 @@ $('#v-cal').addEventListener('click',e=>{if(e.target.closest('#cp')){calM.setMon
  const evb=e.target.closest('.ev'),day=e.target.closest('.day');if(!day)return;const it=evb&&DB.cal.find(x=>x.id===evb.dataset.i);
  form2(it?'Edit content':'New content',EF,it||{date:day.dataset.d},o=>{if(it)Object.assign(it,o);else DB.cal.push({id:uid(),cid:ACT,...o});saveD();renderCal();toast('Saved')},it?()=>{DB.cal=DB.cal.filter(x=>x!==it);saveD();renderCal()}:null)});
 $('#v-cal').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.classList.contains('day'))e.target.click()});
-// ---- team tasks ----
-DB.tasks=DB.tasks||[];DB.agents=DB.agents||[];DB.models=DB.models||[];DB.sales=DB.sales||[];DB.platformMetrics=DB.platformMetrics||[];DB.chats=DB.chats||[];DB.asst=DB.asst||{lang:'en'};DB.auto=DB.auto||{on:{},log:[],last:{}};DB.auto.last=DB.auto.last||{};DB.agents.forEach(a=>{if(a.status==='Running')a.status='Paused'});
-Object.assign(SC,{'To do':'#38bdf8','In progress':'#f59e0b',High:'#ef4444',Medium:'#f59e0b',Low:'#22c55e',Running:'#22c55e',Paused:'#f59e0b','Needs approval':'#a855f7',Cancelled:'#81738F',Completed:'#22c55e'});
-function renderTasks(){const v=$('#v-tasks');if(!ACT){v.innerHTML=noClient;return}const t0=fmt(new Date()),l=mine('tasks'),od=x=>x.status!=='Done'&&x.due&&x.due<t0,pr={High:0,Medium:1,Low:2},srt=a=>a.sort((x,y)=>(x.due||'9').localeCompare(y.due||'9')||pr[x.priority]-pr[y.priority]);
- const g=[['Overdue',srt(l.filter(od))],['Open',srt(l.filter(x=>x.status!=='Done'&&!od(x)))],['Completed',srt(l.filter(x=>x.status==='Done'))]];
- const card=x=>`<div class="cc" data-id="${x.id}"><h3 style="${x.status==='Done'?'text-decoration:line-through;opacity:.7':''}">${esc(x.title)}</h3><div><span class="chip" style="color:${SC[x.priority]}">${x.priority} priority</span><span class="chip" style="color:${SC[x.status]}">${x.status}</span>${od(x)?'<span class="chip" style="color:#ef4444">Overdue</span>':''}</div><div>Assigned to: ${esc(x.who||'Unassigned')}</div><div>Due: ${esc(x.due||'No deadline')}</div><div class="ac">${x.status!=='Done'?'<button data-a="d">Mark done</button>':'<button data-a="r">Reopen</button>'}<button data-a="e">Edit</button></div></div>`;
- v.innerHTML=`<div class="ch"><div><h1>Team Tasks</h1><p class="sub">For ${cname()}. Sign in to sync changes to Supabase.</p></div><button class="btn" id="nt">New task</button></div>`+(l.length?g.filter(s=>s[1].length).map(s=>`<h2 style="font-size:13px;font-weight:500;margin:16px 0 10px;color:${s[0]==='Overdue'?'#ef4444':'#fff'}">${s[0]} (${s[1].length})</h2><div class="cg">${s[1].map(card).join('')}</div>`).join(''):'<div class="empty">No tasks yet. Add the first one for this client.</div>')}
-const TF=[{k:'title',l:'Task',t:'text',r:1},{k:'who',l:'Assigned to',t:'text'},{k:'priority',l:'Priority',t:'select',o:['Low','Medium','High'].map(s=>[s,s]),d:'Medium'},{k:'due',l:'Deadline',t:'date'},{k:'status',l:'Status',t:'select',o:['To do','In progress','Done'].map(s=>[s,s]),d:'To do'}];
+// ---- team tasks: four-stage workflow ----
+DB.tasks=Array.isArray(DB.tasks)?DB.tasks:[];DB.agents=Array.isArray(DB.agents)?DB.agents:[];DB.models=Array.isArray(DB.models)?DB.models:[];DB.sales=Array.isArray(DB.sales)?DB.sales:[];DB.platformMetrics=Array.isArray(DB.platformMetrics)?DB.platformMetrics:[];DB.chats=Array.isArray(DB.chats)?DB.chats:[];DB.asst=DB.asst||{lang:'en'};DB.auto=DB.auto||{on:{},log:[],last:{}};DB.auto.last=DB.auto.last||{};DB.agents.forEach(a=>{if(a.status==='Running')a.status='Paused'});
+const TASK_STAGES=[
+ {name:'To do',progress:0,color:'#ef4444'},
+ {name:'In progress',progress:45,color:'#f97316'},
+ {name:'In review',progress:85,color:'#f97316'},
+ {name:'Done',progress:100,color:'#22c55e'}
+];
+Object.assign(SC,{'To do':'#ef4444','In progress':'#f97316','In review':'#f97316',Done:'#22c55e',High:'#ef4444',Medium:'#f59e0b',Low:'#22c55e',Running:'#22c55e',Paused:'#f59e0b','Needs approval':'#a855f7',Cancelled:'#81738F',Completed:'#22c55e'});
+// Normalize legacy task statuses without discarding task records.
+DB.tasks.forEach(t=>{if(t.status==='Completed')t.status='Done';if(t.status==='Review'||t.status==='In review')t.status='In review';if(!TASK_STAGES.some(s=>s.name===t.status))t.status='To do'});
+function renderTasks(){
+ const v=$('#v-tasks');if(!ACT){v.innerHTML=noClient;return}
+ const all=mine('tasks'),today=fmt(new Date()),od=x=>x.status!=='Done'&&x.due&&x.due<today,pr={High:0,Medium:1,Low:2};
+ const sorted=a=>a.sort((x,y)=>(x.due||'9999').localeCompare(y.due||'9999')||(pr[x.priority]??1)-(pr[y.priority]??1));
+ const pct=x=>(TASK_STAGES.find(s=>s.name===x.status)||TASK_STAGES[0]).progress;
+ const nextButton=x=>x.status==='To do'?'<button data-a="start">Start</button>':x.status==='In progress'?'<button data-a="review">Make it</button>':x.status==='In review'?'<button data-a="finish">Finish</button>':'<button data-a="reopen">Reopen</button>';
+ const card=x=>{const progress=pct(x),color=progress===100?'#22c55e':progress>=70?'#f97316':'#ef4444';return `<div class="cc task-card" data-id="${x.id}"><div class="ch" style="align-items:flex-start;gap:10px"><h3 style="margin:0;${x.status==='Done'?'text-decoration:line-through;opacity:.75':''}">${esc(x.title)}</h3><span class="chip" style="color:${SC[x.status]||'#ef4444'};white-space:nowrap">${esc(x.status)}</span></div><div style="display:flex;gap:7px;flex-wrap:wrap;margin:10px 0"><span class="chip" style="color:${SC[x.priority]||SC.Medium}">${esc(x.priority||'Medium')} priority</span>${od(x)?'<span class="chip" style="color:#ef4444">Overdue</span>':''}</div><div class="muted" style="font-size:12px;margin-bottom:8px">Assigned to: ${esc(x.who||'Unassigned')} · Due: ${esc(x.due||'No deadline')}</div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px"><span>Progress</span><b>${progress}%</b></div><div role="progressbar" aria-label="Task progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progress}" style="height:8px;background:#2a2038;border-radius:99px;overflow:hidden;margin-bottom:12px"><div style="height:100%;width:${progress}%;background:${color};border-radius:99px;transition:width .35s ease,background .35s ease"></div></div><div class="ac">${nextButton(x)}<button data-a="e">Edit</button></div></div>`};
+ v.innerHTML=`<div class="ch"><div><h1>Team Tasks</h1><p class="sub">For ${cname()}. Move tasks through To do → In progress → In review → Done.</p></div><button class="btn" id="nt">New task</button></div>`+(all.length?`<div class="task-board" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:start">${TASK_STAGES.map(stage=>{const items=sorted(all.filter(t=>t.status===stage.name));return `<section class="task-lane" style="min-width:0;border:1px solid #352247;border-radius:14px;padding:12px;background:rgba(24,10,38,.48)"><div class="ch" style="margin-bottom:12px;gap:6px"><h2 style="font-size:13px;font-weight:600;margin:0;color:${stage.color}">${stage.name}</h2><span class="chip">${items.length}</span></div><div style="display:grid;gap:10px">${items.length?items.map(card).join(''):'<div class="empty" style="padding:16px 8px;font-size:12px">No tasks</div>'}</div></section>`}).join('')}</div><style>@media(max-width:900px){#v-tasks .task-board{grid-template-columns:repeat(2,minmax(0,1fr))!important}}@media(max-width:540px){#v-tasks .task-board{grid-template-columns:1fr!important}}</style>`:'<div class="empty">No tasks yet. Add the first one for this client.</div>')}
+const TF=[{k:'title',l:'Task',t:'text',r:1},{k:'who',l:'Assigned to',t:'text'},{k:'priority',l:'Priority',t:'select',o:['Low','Medium','High'].map(s=>[s,s]),d:'Medium'},{k:'due',l:'Deadline',t:'date'},{k:'status',l:'Status',t:'select',o:TASK_STAGES.map(s=>[s.name,s.name]),d:'To do'}];
 $('#v-tasks').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const card=b.closest('.cc'),t=card&&DB.tasks.find(x=>x.id===card.dataset.id),a=b.dataset.a;
- if(a==='d'||a==='r'){t.status=a==='d'?'Done':'To do';saveD();return renderTasks()}
+ if(t&&['start','review','finish','reopen'].includes(a)){t.status=({start:'In progress',review:'In review',finish:'Done',reopen:'To do'})[a];t.updatedAt=new Date().toISOString();saveD();renderTasks();toast('Task moved to '+t.status);return}
  if(b.id!=='nt'&&a!=='e')return;
  form2(t?'Edit task':'New task',TF,t||{},o=>{if(t)Object.assign(t,o);else DB.tasks.push({id:uid(),cid:ACT,...o});saveD();renderTasks();toast('Saved')},t?()=>{DB.tasks=DB.tasks.filter(x=>x!==t);saveD();renderTasks()}:null)});
 // ---- AI agents (simulated runs; nothing is published) ----
@@ -571,7 +703,7 @@ $('#v-set').addEventListener('click',e=>{const b=e.target.closest('button');if(!
  if(b.id==='st_s'){const n=$('#st_n').value.trim(),u=$('#st_e').value.trim();
   if(!n){$('#st_x').textContent='Enter a display name.';return}
   if(u&&!/^(https:\/\/[^\s]+|\/[^\s]*)$/.test(u)){$('#st_x').textContent='Enter a full https:// URL, or leave it empty for demo mode.';return}
-  SET={name:n,endpoint:u};try{localStorage.setItem(SK,JSON.stringify(SET))}catch(x){}applySet();renderSet();toast('Settings saved')}
+  SET={name:n,endpoint:u};try{localStorage.setItem(SK,JSON.stringify(SET))}catch(x){$('#st_x').textContent='Settings could not be saved in this browser.';return}applySet();renderSet();if(typeof queueWorkspaceSync==='function')queueWorkspaceSync();toast('Settings saved locally; cloud sync will run when signed in')}
  if(b.id==='st_r'&&confirm('Delete all RABTA data stored in this browser? This does not delete Supabase cloud data.')){try{['rabta.clients','rabta.data',SK].forEach(k=>localStorage.removeItem(k))}catch(x){}location.reload()}});
 // ---- Supabase authentication ----
 const SS='rabta.session'; let am='in', supa=null, currentUser=null;
@@ -620,7 +752,18 @@ const cloudTables={clients:'rabta_clients',tasks:'rabta_tasks',cmp:'rabta_campai
 // Each data type gets its own debounce timer so a client save cannot cancel a task/campaign save.
 let cloudReady=false;
 let workspaceSyncTimer=null;
-function queueWorkspaceSync(){ if(!supa||!currentUser||!cloudReady)return; clearTimeout(workspaceSyncTimer); const snapshot=JSON.parse(JSON.stringify(DB)); workspaceSyncTimer=setTimeout(async()=>{try{const {error}=await supa.from('rabta_workspace_data').upsert({user_id:currentUser.id,data:snapshot,updated_at:new Date().toISOString()},{onConflict:'user_id'});if(error)throw error;toast('Workspace synced to Supabase')}catch(e){console.error('Workspace cloud sync failed:',e);toast('Workspace is saved locally; cloud sync needs the rabta_workspace_data table.')}} ,500); }
+function queueWorkspaceSync(){
+ if(!supa||!currentUser||!cloudReady)return;
+ clearTimeout(workspaceSyncTimer);
+ const snapshot=JSON.parse(JSON.stringify(DB));
+ // Keep non-DB user preferences and dashboard performance records in the existing workspace row.
+ // The reserved metadata is stripped before merging into DB on load, so it cannot pollute app records.
+ let meta={settings:{},performance:[]};
+ try{meta.settings=JSON.parse(localStorage.getItem('rabta.settings')||'{}')}catch(e){}
+ try{const rows=JSON.parse(localStorage.getItem('rabta.performance.monthly')||'[]');meta.performance=Array.isArray(rows)?rows:[]}catch(e){}
+ snapshot.__rabta_meta=meta;
+ workspaceSyncTimer=setTimeout(async()=>{try{const {error}=await supa.from('rabta_workspace_data').upsert({user_id:currentUser.id,data:snapshot,updated_at:new Date().toISOString()},{onConflict:'user_id'});if(error)throw error;toast('Workspace synced to Supabase')}catch(e){console.error('Workspace cloud sync failed:',e);toast('Workspace is saved locally; cloud sync failed: '+(e.message||'check table and RLS'));}},500);
+ }
 const cloudSyncTimers={clients:null,tasks:null,cmp:null};
 function queueCloudSync(kind,items){
  if(!cloudTables[kind])return;
@@ -657,7 +800,15 @@ async function loadCloudData(){
   const cloudCampaigns=(pr.data||[]).map(r=>r.data).filter(Boolean);
   if(cloudClients.length)CL=cloudClients; else if(CL.length)queueCloudSync('clients',CL);
   if(!CL.some(c=>c.id===ACT&&!c.archived))ACT=(CL.find(c=>!c.archived)||{}).id||null;
-  if(wr.data&&wr.data.data&&typeof wr.data.data==='object')DB={...DB,...wr.data.data};
+  if(wr.data&&wr.data.data&&typeof wr.data.data==='object'){
+   const workspace={...wr.data.data};
+   const meta=workspace.__rabta_meta; delete workspace.__rabta_meta;
+   DB={...DB,...workspace};
+   if(meta&&typeof meta==='object'){
+    try{if(meta.settings&&typeof meta.settings==='object'){localStorage.setItem('rabta.settings',JSON.stringify(meta.settings));if(typeof SET!=='undefined'){Object.assign(SET,meta.settings);if(typeof applySet==='function')applySet()}}}catch(e){console.warn('Could not restore cloud settings locally:',e)}
+    try{if(Array.isArray(meta.performance)){localStorage.setItem('rabta.performance.monthly',JSON.stringify(meta.performance))}}catch(e){console.warn('Could not restore cloud performance records locally:',e)}
+   }
+  }
   if(cloudTasks.length)DB.tasks=cloudTasks; else if((DB.tasks||[]).length)queueCloudSync('tasks',DB.tasks);
   if(cloudCampaigns.length)DB.cmp=cloudCampaigns; else if((DB.cmp||[]).length)queueCloudSync('cmp',DB.cmp);
   DB.cmp=Array.isArray(DB.cmp)?DB.cmp:[];DB.cal=Array.isArray(DB.cal)?DB.cal:[];DB.tasks=Array.isArray(DB.tasks)?DB.tasks:[];DB.agents=Array.isArray(DB.agents)?DB.agents:[];DB.models=Array.isArray(DB.models)?DB.models:[];DB.chats=Array.isArray(DB.chats)?DB.chats:[];DB.auto=DB.auto||{on:{},log:[],last:{}};DB.asst=DB.asst||{lang:'en'};
@@ -763,5 +914,33 @@ function route(){const h=location.hash.slice(1);
  cur={'ai-studio':'studio',clients:'clients',campaigns:'cmp',calendar:'cal','ai-agents':'agents','team-tasks':'tasks',analytics:'ana',settings:'set','data-models':'mod',automation:'auto',assistant:'asst'}[h]||'dashboard';
  runAuto();$('#v-dash').hidden=cur!=='dashboard';if(cur==='dashboard'){renderDashboard();renderPerfChart();renderWorkspaceIndex();}$('#v-clients').hidden=cur!=='clients';$('#v-studio').hidden=cur!=='studio';if(cur==='clients')renderClients();if(cur==='studio')renderStudio();$('#v-cmp').hidden=cur!=='cmp';$('#v-cal').hidden=cur!=='cal';if(cur==='cmp')renderCmp();if(cur==='cal')renderCal();$('#v-agents').hidden=cur!=='agents';$('#v-tasks').hidden=cur!=='tasks';if(cur==='agents')renderAgents();if(cur==='tasks')renderTasks();$('#v-ana').hidden=cur!=='ana';$('#v-set').hidden=cur!=='set';if(cur==='ana')renderAna();if(cur==='set')renderSet();$('#v-mod').hidden=cur!=='mod';$('#v-auto').hidden=cur!=='auto';if(cur==='mod')renderMod();if(cur==='auto')renderAuto();$('#v-asst').hidden=cur!=='asst';if(cur==='asst')renderAsst();
  document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.n===({clients:'Clients',studio:'AI Studio',cmp:'Campaigns',cal:'Calendar',agents:'AI Agents',tasks:'Team Tasks',ana:'Analytics',set:'Settings',mod:'Data Models',auto:'Automation',asst:'Assistant'}[cur]||'Dashboard')))}
+// Functional Campaign Journey: creates and updates campaign records in the existing workspace.
+(function(){
+ const stages=[...document.querySelectorAll('.journey-stage')],fields=$('#journeyFields'),title=$('#journeyStageTitle'),status=$('#journeyStatus');
+ if(!stages.length||!fields||!title||!status)return;
+ const spec=[
+  {title:'01 · Plan your campaign',fields:[['name','Campaign name','text','e.g. Summer lead generation',1],['goal','Campaign goal','textarea','What result do you want?',1],['audience','Target audience','text','Who are you trying to reach?'],['budget','Budget (number)','number','0'],['client','Client / brand','client','']]},
+  {title:'02 · Create the content brief',fields:[['offer','Offer / key message','textarea','What are you promoting?'],['content','Content and creative notes','textarea','Ad copy, visuals, CTA, landing page…'],['channels','Marketing channels','text','Instagram, Facebook, email…']]},
+  {title:'03 · Schedule the campaign',fields:[['start','Start date','date',''],['end','End date','date',''],['cadence','Publishing cadence','text','e.g. 3 posts per week']]},
+  {title:'04 · Launch readiness',fields:[['checklist','Launch checklist','textarea','Creative approved? Links checked? Tracking ready?'],['launchNotes','Launch notes','textarea','Record approvals and launch notes.']]},
+  {title:'05 · Analyse results',fields:[['results','Results / KPIs','textarea','Reach, clicks, leads, conversions…'],['learnings','Learnings and next steps','textarea','What worked and what should change?']]}
+ ];
+ let stage=0,editingId=null,formData={};const val=k=>{const e=document.getElementById('j_'+k);return e?e.value.trim():''};
+ function renderFields(){title.textContent=spec[stage].title;fields.innerHTML=spec[stage].fields.map(([k,l,t,ph,req])=>{let input='';if(t==='client'){const clients=Array.isArray(CL)?CL.filter(c=>!c.archived):[];input='<select id="j_client"><option value="">'+(clients.length?'Choose client / brand':'No clients available')+'</option>'+clients.map(c=>'<option value="'+esc(c.id)+'">'+esc(c.name)+'</option>').join('')+'</select>'}else if(t==='textarea')input='<textarea id="j_'+k+'" placeholder="'+esc(ph)+'"></textarea>';else input='<input id="j_'+k+'" type="'+t+'" '+(t==='number'?'min="0" step="0.01"':'')+' placeholder="'+esc(ph)+'" '+(req?'required':'')+'>';return '<div class="'+(['goal','offer','content','checklist','launchNotes','results','learnings'].includes(k)?'wide':'')+'"><label for="j_'+k+'">'+esc(l)+(req?' *':'')+'</label>'+input+'</div>'}).join('');
+  const record=editingId&&DB.cmp.find(c=>c.id===editingId);spec[stage].fields.forEach(([k])=>{const e=document.getElementById('j_'+k);if(e){if(record&&formData[k]===undefined)formData[k]=record[k]??'';if(formData[k]!==undefined)e.value=formData[k]}});fields.querySelectorAll('input,textarea,select').forEach(e=>e.addEventListener('input',()=>{formData[e.id.slice(2)]=e.value}));
+  stages.forEach((b,i)=>{b.classList.toggle('active',i===stage);b.setAttribute('aria-pressed',i===stage?'true':'false')});$('#journeyBack').disabled=stage===0;$('#journeyNext').textContent=stage===4?'Finish review':'Next stage';
+ }
+ function reset(){stage=0;editingId=null;formData={};renderFields();status.textContent='Create a campaign plan, then save it to your workspace.';$('#journeySave').textContent='Save campaign'}
+ function collect(){fields.querySelectorAll('input,textarea,select').forEach(e=>{formData[e.id.slice(2)]=e.value.trim()});return {...formData}}
+ function renderSaved(){const box=$('#journeySaved');const rows=(DB.cmp||[]).filter(c=>!ACT||c.cid===ACT).slice().reverse().slice(0,5);if(!rows.length){box.innerHTML='<p class="sub">No campaigns saved yet. Create your first campaign above.</p>';return}box.innerHTML='<b style="display:block;margin-bottom:8px">Recent campaigns</b>'+rows.map(c=>'<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0;border-top:1px solid var(--bd)"><div><b>'+esc(c.name||'Untitled campaign')+'</b><div class="sub" style="font-size:12px">'+esc(c.status||'Planned')+' · '+esc(c.start||'No start date')+' · '+esc(c.goal||'No goal')+'</div></div><button type="button" class="btn g" data-journey-edit="'+esc(c.id)+'">Continue</button></div>').join('')}
+ stages.forEach((b)=>b.addEventListener('click',()=>{stage=Number(b.dataset.stage);renderFields()}));
+ $('#journeyNew').addEventListener('click',reset);
+ $('#journeyBack').addEventListener('click',()=>{stage=Math.max(0,stage-1);renderFields()});
+ $('#journeyNext').addEventListener('click',()=>{if(stage===0&&!val('name')){status.textContent='Enter a campaign name before moving on.';return}if(stage===0&&!val('goal')){status.textContent='Add a campaign goal before moving on.';return}if(stage===2&&val('start')&&val('end')&&val('end')<val('start')){status.textContent='End date must be on or after the start date.';return}stage=Math.min(4,stage+1);renderFields()});
+ $('#journeySave').addEventListener('click',()=>{const o=collect();if(!o.name){stage=0;renderFields();status.textContent='Campaign name is required.';return}if(!o.goal){stage=0;renderFields();status.textContent='Campaign goal is required.';return}if(o.budget&&(!Number.isFinite(Number(o.budget))||Number(o.budget)<0)){status.textContent='Budget must be zero or a positive number.';return}if(o.start&&o.end&&o.end<o.start){stage=2;renderFields();status.textContent='End date must be on or after the start date.';return}const cid=o.client||ACT;if(!cid){status.textContent='Choose a client in Plan, or create/select a client first in Clients & Brands.';stage=0;renderFields();return}const prior=editingId&&DB.cmp.find(c=>c.id===editingId);const item={...(prior||{}),id:editingId||uid(),cid,...o,status:(prior&&prior.status)||'Planned',journeyStage:stage,updatedAt:new Date().toISOString()};if(prior)Object.assign(prior,item);else DB.cmp.push(item);saveD();renderSaved();renderDashboard();status.textContent='Campaign saved to this workspace. Cloud sync is queued when signed in; publishing is not connected.';toast('Campaign journey saved')});
+ $('#journeyOpenCampaigns').addEventListener('click',()=>location.hash='campaigns');
+ $('#journeySaved').addEventListener('click',e=>{const b=e.target.closest('[data-journey-edit]');if(!b)return;const c=DB.cmp.find(x=>x.id===b.dataset.journeyEdit);if(!c)return;editingId=c.id;stage=0;formData={};spec.forEach(g=>g.fields.forEach(([k])=>{if(c[k]!==undefined)formData[k]=c[k]}));renderFields();status.textContent='Editing saved campaign. Save to update it.';$('#journeySave').textContent='Update campaign'});
+ renderFields();renderSaved();
+})();
 addEventListener('hashchange',route);route();
 </script></body></html>
