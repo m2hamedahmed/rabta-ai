@@ -90,6 +90,12 @@ h1{margin:0;font-size:25px;font-weight:600;letter-spacing:-.3px}
  body{padding:8px}.cards,.tools{grid-template-columns:1fr}.search{flex:1}.prof>span:not(.av){display:none}.seg{width:100%;overflow-x:auto}.seg button{flex:1;padding:9px 10px;white-space:nowrap}h1{font-size:21px}.panel{padding:14px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Analytics workspace redesign — uses existing RABTA purple theme and tokens */
+.ana-page{display:grid;gap:16px;min-width:0}.ana-titlebar{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:4px 2px 2px}.ana-eyebrow{font-size:9px;letter-spacing:1.8px;color:var(--v);font-weight:700;margin-bottom:7px}.ana-titlebar h1{font-size:25px}.ana-title-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.ana-date{display:flex;align-items:center;gap:9px;border:1px solid var(--bd);border-radius:12px;padding:8px 10px;color:var(--t2);font-size:10px;background:var(--panel)}.ana-date select{max-width:135px;background:transparent;color:var(--t);border:0;font:inherit;outline:none}.ana-date option{background:#160a24;color:#fff}.ana-connection{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--bd);border-radius:999px;padding:8px 10px;font-size:9px;color:var(--t2)}.ana-connection i{width:6px;height:6px;border-radius:50%;background:#f59e0b;box-shadow:0 0 0 3px #f59e0b18}.ana-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.ana-kpi{min-width:0;padding:15px 16px;border:1px solid var(--bd);border-radius:16px;background:linear-gradient(155deg,#1a0b2b,var(--card) 76%)}.ana-kpi-top{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--t2);font-size:11px}.ana-icon{width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:#7c3aed20;border:1px solid #7c3aed40;color:#c4b5fd;font-size:15px}.ana-value{font-size:27px;line-height:1.25;font-weight:700;letter-spacing:-.7px;margin:10px 0 4px;overflow-wrap:anywhere}.ana-foot{font-size:9px;line-height:1.5;color:var(--t3)}.ana-main-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr) minmax(220px,.9fr);gap:12px;align-items:stretch}.ana-bottom-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:12px;align-items:stretch}.ana-card{min-width:0;padding:16px;border:1px solid var(--bd);border-radius:17px;background:linear-gradient(155deg,#170925,var(--panel) 65%)}.ana-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:16px}.ana-card-head h2,.ana-report-card h2{font-size:13px;font-weight:600;margin:0}.ana-card-head p,.ana-report-card p{font-size:10px;color:var(--t3);line-height:1.55;margin:6px 0 0}.ana-card-head .btn{padding:7px 10px;white-space:nowrap}.ana-empty{min-height:145px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;border:1px dashed #3a2450;border-radius:12px;background:#0c0413}.ana-empty>span{font-size:25px;color:var(--t3);font-weight:500}.ana-empty p{max-width:260px;font-size:10px;line-height:1.6;color:var(--t3);margin:8px 0 0}.ana-status-list{display:grid;gap:14px;padding:4px 0}.ana-status-row{display:grid;grid-template-columns:8px minmax(0,1fr) auto;align-items:center;gap:8px;font-size:10px;color:var(--t2)}.ana-status-row b{font-size:11px;color:var(--t);font-weight:600}.ana-dot{width:7px;height:7px;border-radius:50%}.ana-track{grid-column:2/4;height:5px;border-radius:99px;background:#2a1838;overflow:hidden}.ana-track i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--p),var(--v))}.ana-insights{display:grid;gap:0}.ana-insights>div{position:relative;display:grid;grid-template-columns:1fr auto;gap:5px 8px;padding:11px 0;border-bottom:1px solid var(--bd)}.ana-insights>div:last-child{border-bottom:0}.ana-insights span{font-size:10px;color:var(--t2)}.ana-insights b{font-size:18px}.ana-insights small{font-size:9px;color:var(--t3)}.ana-insights svg{grid-column:1/-1;width:100%;height:25px;fill:none;stroke:var(--v);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.7}.ana-segments{display:flex;gap:4px;padding:3px;background:#0c0413;border:1px solid var(--bd);border-radius:10px;margin-bottom:12px;width:max-content;max-width:100%}.ana-segments button{font-size:9px;padding:7px 10px;border-radius:7px;color:var(--t3)}.ana-segments button.on{background:#7c3aed30;color:#fff}.ana-segments button:disabled{cursor:default}.ana-report-card{padding:16px;border:1px solid var(--bd);border-radius:17px;background:linear-gradient(155deg,#170925,var(--panel) 65%);display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}.ana-report-actions{display:flex;gap:8px;flex-wrap:wrap}.ana-report-card textarea{grid-column:1/-1;width:100%;min-height:110px;resize:vertical;background:#0c0413;border:1px solid var(--bd);border-radius:11px;color:var(--t);padding:12px;font:inherit;font-size:11px;line-height:1.6}.ana-report-card textarea::placeholder{color:var(--t3)}.ana-footnote{font-size:9px;line-height:1.5;color:var(--t3);margin:0 2px 4px}
+@media(max-width:1000px){.ana-main-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ana-main-grid>.ana-card:last-child{grid-column:1/-1}.ana-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.ana-bottom-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.ana-kpis,.ana-main-grid,.ana-bottom-grid{grid-template-columns:minmax(0,1fr)}.ana-main-grid>.ana-card:last-child{grid-column:auto}.ana-titlebar{align-items:flex-start}.ana-title-actions{width:100%}.ana-date{flex:1;justify-content:space-between}.ana-connection{justify-content:center}.ana-titlebar h1{font-size:22px}.ana-report-card{grid-template-columns:1fr}.ana-report-actions{grid-column:1;grid-row:auto}.ana-report-card textarea{grid-column:1}.ana-card{padding:14px}}
+
 [hidden]{display:none!important}
 .ch{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
 .btn{padding:9px 16px;border-radius:999px;font-size:11px;background:linear-gradient(90deg,#a855f7,#7c3aed);box-shadow:0 4px 16px #7c3aed55;transition:.2s}
@@ -186,6 +192,10 @@ dialog select{width:100%;background:#0d0418;border:1px solid var(--bd);border-ra
 .stp{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:9px 12px;border:1px solid var(--bd);border-radius:12px;font-size:12px}
 .mini{padding:4px 10px;margin-inline-start:6px;border-radius:999px;border:1px solid var(--v);font-size:10px}.mini:hover{background:#ffffff12}
 .cmp{display:flex;gap:8px;margin-top:12px;align-items:flex-end}.cmp textarea{resize:none}
+
+.journey{margin-top:14px;background:#10051b}.journey-track{position:relative;margin-top:8px;padding:4px 2px 0}.journey-svg{display:block;width:100%;height:88px;overflow:visible}.journey-path-bg{fill:none;stroke:#38234b;stroke-width:3;stroke-linecap:round}.journey-path{fill:none;stroke:#8b5cf6;stroke-width:2;stroke-dasharray:7 9;stroke-linecap:round;opacity:.8}.journey-dot{fill:#f3e8ff;stroke:#a855f7;stroke-width:4;filter:drop-shadow(0 0 5px #a855f7)}.journey-stages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:-5px}.journey-stage{min-width:0;text-align:left;display:grid;gap:5px;padding:10px;border:1px solid var(--bd);border-radius:12px;background:#160a23;color:var(--t2);transition:border-color .2s,background .2s,transform .2s}.journey-stage span{font-size:10px;color:#c084fc;letter-spacing:.08em}.journey-stage b{font-size:12px;color:var(--t)}.journey-stage small{font-size:10px;line-height:1.4}.journey-stage.active{border-color:#a855f7;background:#241039;transform:translateY(-2px)}.journey-status{font-size:11px;color:var(--t2);margin:10px 2px 0}@media(max-width:620px){.journey-svg{height:54px}.journey-stages{grid-template-columns:1fr;gap:6px;margin-top:0}.journey-stage{grid-template-columns:35px 1fr;align-items:center}.journey-stage span{grid-row:span 2}.journey-stage small{grid-column:2}.journey .ph{align-items:flex-start;gap:10px}}
+
+.ana-records{display:grid;gap:8px}.ana-record{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px;border:1px solid var(--bd);border-radius:10px;background:#0c0413;min-width:0}.ana-record>div:first-child{min-width:0}.ana-record b{display:block;font-size:10px;overflow-wrap:anywhere}.ana-record small{display:block;font-size:9px;color:var(--t3);line-height:1.5;margin-top:4px}.ana-record .ac{display:flex;gap:5px;flex-shrink:0}.ana-record .ac button{font-size:9px;padding:6px 8px;border:1px solid var(--bd);border-radius:7px;color:var(--t2)}.ana-card-head{flex-wrap:wrap}.ana-date select{max-width:145px}@media(max-width:620px){.ana-record{align-items:flex-start;flex-direction:column}.ana-record .ac{width:100%}.ana-record .ac button{flex:1}}
 </style></head>
 <body>
 <div class="scrim" id="scrim"></div>
@@ -218,24 +228,32 @@ dialog select{width:100%;background:#0d0418;border:1px solid var(--bd);border-ra
   <section class="panel" id="v-studio" hidden></section>
   <section class="panel" id="v-clients" hidden></section>
   <section class="panel" id="v-dash">
-   <div class="welcome"><div><h1>Welcome back, <span id="wn">Alex</span></h1><p class="sub">Here’s what’s happening with your AI today</p></div>
+   <div class="welcome"><div><h1>Welcome back, <span id="wn">there</span></h1><p class="sub">Here’s what’s happening with your AI today</p></div>
     <div class="seg" id="seg"><button class="on">AI Active</button><button>Generate New</button><button>Analyse Data</button><button>Upload</button></div></div>
    <div class="cards" id="cards"></div>
+   <section class="panel journey" aria-labelledby="journey-title">
+    <div class="ph"><div><h2 id="journey-title">Campaign Journey</h2><p class="sub" style="margin-top:4px">A visual preview of your marketing workflow</p></div><button class="btn" type="button" id="journeyRun">Run preview</button></div>
+    <div class="journey-track" id="journeyTrack">
+     <svg class="journey-svg" viewBox="0 0 900 110" role="img" aria-label="Animated path connecting campaign workflow stages" preserveAspectRatio="none"><path class="journey-path-bg" d="M55 55 C150 5 190 105 280 55 S410 5 505 55 S640 105 730 55 S820 20 850 55"/><path class="journey-path" d="M55 55 C150 5 190 105 280 55 S410 5 505 55 S640 105 730 55 S820 20 850 55"/><circle class="journey-dot" r="7" cx="55" cy="55"><animateMotion id="journeyMotion" dur="5s" repeatCount="indefinite" path="M0 0 C95 -50 135 50 225 0 S355 -50 450 0 S585 50 675 0 S765 -35 795 0"/></circle></svg>
+     <div class="journey-stages"><button type="button" class="journey-stage active" data-stage="0"><span>01</span><b>Plan</b><small>Set the campaign goal</small></button><button type="button" class="journey-stage" data-stage="1"><span>02</span><b>Create</b><small>Prepare content</small></button><button type="button" class="journey-stage" data-stage="2"><span>03</span><b>Schedule</b><small>Choose publishing time</small></button><button type="button" class="journey-stage" data-stage="3"><span>04</span><b>Launch</b><small>Publish the campaign</small></button><button type="button" class="journey-stage" data-stage="4"><span>05</span><b>Analyse</b><small>Review results</small></button></div>
+     <p class="journey-status" id="journeyStatus" aria-live="polite">Preview stage: Plan · This is a visual demo and does not publish campaigns.</p>
+    </div>
+   </section>
    <div class="row">
     <div class="panel" style="background:#10051b">
-     <div class="ph"><h2>AI Performance Index</h2><button class="exp" aria-label="Expand"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button></div>
-     <div class="big">$64,345 <span class="badge">+14.3%</span></div>
+     <div class="ph"><h2>AI Performance Index</h2><button class="btn" type="button" id="perfManage">Manage data</button></div>
+     <div class="big" id="perfMetricTitle">Monthly revenue <span class="badge">Manual data</span></div>
      <div class="chart" id="chart"></div>
     </div>
     <div class="panel" style="background:#10051b">
-     <div class="ph"><h2>AI Confidence Index</h2><button class="exp" aria-label="Expand"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button></div>
-     <div class="gauge" id="gauge"><div class="score"><b>82.5</b><span>Overall Score</span></div></div>
+     <div class="ph"><h2>AI Confidence Index</h2><button class="exp" type="button" aria-label="Expand AI Confidence Index" id="confidenceExpand"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button></div>
+     <div class="gauge" id="gauge"><div class="score"><b id="indexScore">0%</b><span>Overall Score</span></div></div>
      <div class="lg" id="lg"></div>
     </div>
    </div>
    <div class="sh"><div><h2>AI Performance Index</h2><p class="sub" style="margin-top:4px">Choose from our suite of AI-powered tools</p></div><a href="#" id="all">See All</a></div>
    <div class="tools" id="tools"></div>
-   <p class="note">Demo mode: all figures on this page are sample data, not live metrics.</p>
+   <p class="note" id="dash_note">The chart uses data you enter; the index is calculated from saved workspace records.</p>
   </section>
  </div>
 </div>
@@ -258,7 +276,7 @@ dialog select{width:100%;background:#0d0418;border:1px solid var(--bd);border-ra
 <div class="err" id="f_err" role="alert"></div>
 <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px"><button class="btn g" id="f_c">Cancel</button><button class="btn" id="f_s">Save client</button></div></dialog>
 <dialog id="dg2"><h2 id="d2t" style="margin:0;font-size:16px"></h2><div id="d2f"></div><div class="err" id="d2e" role="alert"></div><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px"><button class="btn g" id="d2x" hidden style="margin-right:auto;color:#ef4444">Delete</button><button class="btn g" id="d2c">Cancel</button><button class="btn" id="d2s">Save</button></div></dialog>
-<div class="toast" id="toast"></div>
+<dialog id="perfDialog" style="max-width:560px;width:calc(100% - 28px)"><h2 style="margin:0 0 8px">Manage Performance Data</h2><p class="sub">Enter real monthly values. These records are saved in this browser and can be edited or deleted.</p><form id="perfForm"><label for="perfMonth">Month</label><input id="perfMonth" type="month" required><label for="perfValue">Value (revenue in your currency)</label><input id="perfValue" type="number" min="0" step="0.01" required><div class="err" id="perfErr" role="alert"></div><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px"><button class="btn g" type="button" id="perfCancel">Close</button><button class="btn" type="submit" id="perfSave">Add data</button></div></form><hr style="border-color:var(--bd);margin:16px 0"><h3>Saved monthly records</h3><div id="perfRecords"></div></dialog><div class="toast" id="toast"></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 // RABTA Supabase configuration. Replace the placeholder with your project's sb_publishable_ key.
@@ -290,8 +308,8 @@ const toast=t=>{const e=$('#toast');e.textContent=t;e.classList.add('on');clearT
 const side=$('#side'),sc=$('#scrim');
 function closeSide(){side.classList.remove('open');sc.classList.remove('open')}
 $('#burger').onclick=()=>{side.classList.add('open');sc.classList.add('open')};sc.onclick=closeSide;
-// segmented
-document.querySelectorAll('#seg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#seg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');if(b.textContent!=='AI Active')toast(b.textContent+' selected (demo)')});
+// Dashboard controls retain the original appearance and navigate to working sections.
+document.querySelectorAll('#seg button').forEach((b,i)=>b.onclick=()=>{document.querySelectorAll('#seg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');const routes=['ai-agents','ai-studio','analytics','clients'];location.hash=routes[i]||'';});
 // dropdowns
 const nm=$('#nm'),pm=$('#pm');
 $('#bell').onclick=e=>{e.stopPropagation();pm.classList.remove('open');nm.classList.toggle('open')};
@@ -300,37 +318,81 @@ document.addEventListener('click',()=>{nm.classList.remove('open');pm.classList.
 $('#clr').onclick=()=>$('#dot').style.display='none';
 pm.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>toast(b.dataset.t));
 $('#q').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.value.trim())toast('Search is a demo: “'+e.target.value.trim()+'”')});
-$('#all').onclick=e=>{e.preventDefault();toast('AI Tools page is not built in this preview yet')};
+// The old preview's #all link was removed in this layout; its handler is attached below only when present.
 document.querySelectorAll('.exp').forEach(b=>b.onclick=()=>toast('Expanded view (demo)'));
-// metric cards
-const spark=(seed,col,amp)=>{let p=[],n=26;for(let i=0;i<n;i++){const y=20+Math.sin(i*(.5+seed*.3)+seed)*amp+Math.sin(i*1.9+seed*3)*amp*.6;p.push([i/(n-1)*100,y])}
- const d=p.map((q,i)=>(i?'L':'M')+q[0].toFixed(1)+' '+q[1].toFixed(1)).join('');
- return `<svg class="sp2" viewBox="0 0 100 40" preserveAspectRatio="none"><defs><linearGradient id="s${seed}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".35"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs><path d="${d}L100 40L0 40Z" fill="url(#s${seed})"/><path d="${d}" fill="none" stroke="${col}" stroke-width="1.4" vector-effect="non-scaling-stroke"/></svg>`};
-[['AI Usage','24.5K','+12.5%',1,'pulse','#f59e0b','#3a1d0a','#4a2a12',5],['Outputs','1,847','+8.2%',2,'t','#8b5cf6','#2a1450','#3b2070',7],['Precision','98.5%','+2.1%',3,'tg','#2dd4bf','#0c2a33','#143c47',6],['Models','12','-1.2%',4,'br','#d946ef','#3a1250','#4d1a66',9]].forEach(([t,v,tr,s,k,col,g,c2,a])=>{
- const dn=tr[0]==='-';$('#cards').insertAdjacentHTML('beforeend',`<div class="m" style="--g:${g};--c2:${c2}"><div class="ic">${ic(k)}</div>${spark(s,col,a)}<h3>${t}</h3><div class="v">${v}</div><div class="tr"><span class="${dn?'dn':'up'}">${tr}</span> this month</div></div>`)});
-// performance chart
-let narrow=innerWidth<600;function perfChart(){const W=narrow?380:640,H=narrow?280:300,L=44,R=12,T=14,B=34,pts=[[0,57],[.25,57],[.38,33],[.5,37],[.6,60],[.8,33],[1,57]],sel=3;
- const X=f=>L+f*(W-L-R),Y=v=>T+(1-v/80)*(H-T-B);let s=`<svg viewBox="0 0 ${W} ${H}"><defs><linearGradient id="pf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a855f7" stop-opacity=".28"/><stop offset="1" stop-color="#a855f7" stop-opacity="0"/></linearGradient><linearGradient id="pb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#7c3aed" stop-opacity="0"/></linearGradient></defs>`;
- [0,20,40,60,80].forEach(v=>s+=`<line x1="${L}" x2="${W-R}" y1="${Y(v)}" y2="${Y(v)}" stroke="#2b183a" stroke-dasharray="2 5"/><text x="${L-10}" y="${Y(v)+3}" text-anchor="end" fill="#81738F" font-size="10">$${v}K</text>`);
- [['Jan',0],['Apr',.25],['July',.5],['Oct',.75],['Dec',1]].forEach(([n,f])=>s+=`<text x="${X(f)}" y="${H-10}" text-anchor="middle" fill="#81738F" font-size="10">${n}</text>`);
- const d=pts.map((p,i)=>(i?'L':'M')+X(p[0])+' '+Y(p[1])).join('');
- s+=`<rect id="hb" x="${X(.5)-15}" y="${Y(60)-6}" width="30" height="${H-B-Y(60)+6}" rx="8" fill="url(#pb)" opacity=".9"/><path d="${d}L${X(1)} ${H-B}L${X(0)} ${H-B}Z" fill="url(#pf)"/><path d="${d}" fill="none" stroke="#8b5cf6" stroke-width="1.8" stroke-linejoin="round"/>`;
- pts.forEach((p,i)=>s+=`<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="4" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2"/>`);
- s+=`<rect x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent" id="hit"/></svg><div class="tip" id="tip"></div>`;
- const c=$('#chart');c.innerHTML=s;const tip=$('#tip'),hb=$('#hb'),mo=['Jan','Mar','Apr','Jul','Aug','Oct','Dec'];
- function show(i){const p=pts[i];tip.style.left=X(p[0])/W*100+'%';tip.style.top=(Y(p[1])/H*c.clientHeight-10)+'px';tip.textContent=mo[i]+' · $'+p[1]+'K (sample)';hb.setAttribute('x',X(p[0])-15);hb.setAttribute('y',Y(p[1])-6);hb.setAttribute('height',H-B-Y(p[1])+6)}
- show(sel);$('#hit').addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),f=((e.clientX-r.left)/r.width*W-L)/(W-L-R);let b=0;pts.forEach((p,i)=>{if(Math.abs(p[0]-f)<Math.abs(pts[b][0]-f))b=i});show(b)});
- $('#hit').addEventListener('mouseleave',()=>show(sel));$('#hit').addEventListener('click',e=>{});window.__show=()=>show(sel)}perfChart();addEventListener('resize',()=>{const m=innerWidth<600;if(m!==narrow){narrow=m;perfChart()}else window.__show()});
-// gauge
-(function(){const cx=150,cy=150,N=44,cols=[[0,78],[.35,170],[.65,215],[1,310]];
- const hue=f=>{for(let i=1;i<cols.length;i++)if(f<=cols[i][0]){const a=cols[i-1],b=cols[i];return a[1]+(b[1]-a[1])*(f-a[0])/(b[0]-a[0])}return 310};
- let s='<svg viewBox="0 0 300 175">';
- for(let i=0;i<N;i++){const f=i/(N-1),a=Math.PI*(1-f),h=.55+.45*(i%2?0:1),r1=96,r2=96+ (i%2?16:22),c=Math.cos(a),n=Math.sin(a);
-  s+=`<line x1="${cx+c*r1}" y1="${cy-n*r1}" x2="${cx+c*(r2+4)}" y2="${cy-n*(r2+4)}" stroke="hsl(${hue(f)} 90% 58%)" stroke-width="4.2" stroke-linecap="round"/>`}
- for(let i=0;i<60;i++){const a=Math.PI*(1-i/59);s+=`<circle cx="${cx+Math.cos(a)*82}" cy="${cy-Math.sin(a)*82}" r="1.2" fill="hsl(${hue(i/59)} 80% 60%)" opacity=".75"/>`}
- [['0',150,12,'middle'],['-50',78,30,'middle'],['-50',222,30,'middle'],['-100',16,106,'middle'],['-50',284,106,'middle']].forEach(([t,x,y,a])=>s+=`<text x="${x}" y="${y}" text-anchor="${a}" fill="#B7A9C8" font-size="9">${t}</text>`);
- $('#gauge').insertAdjacentHTML('afterbegin',s+'</svg>')})();
-[['Performance','24%','#c8f03c'],['Accuracy','32%','#3b9cff'],['Efficiency','27%','#2dd4bf'],['Reliability','17%','#d946ef']].forEach(([n,v,c])=>$('#lg').insertAdjacentHTML('beforeend',`<div><i style="background:${c}"></i>${n}<b>${v}</b></div>`));
+const allLink=$('#all');if(allLink)allLink.onclick=e=>{e.preventDefault();location.hash='ai-studio'};
+// Dashboard: show only counts derived from the current workspace; never invent performance figures.
+function renderDashboard(){
+ const cards=$('#cards'),tools=$('#tools'); if(!cards||!tools)return;
+ const clients=Array.isArray(CL)?CL.filter(x=>!x.archived):[];
+ const tasks=Array.isArray(DB.tasks)?DB.tasks:[],campaigns=Array.isArray(DB.cmp)?DB.cmp:[],calendar=Array.isArray(DB.cal)?DB.cal:[];
+ const open=tasks.filter(x=>x.status!=='Done').length,done=tasks.filter(x=>x.status==='Done').length;
+ const metrics=[['Active clients',clients.length,'u','#f59e0b','#3a1d0a','#4a2a12'],['Open tasks',open,'ck','#8b5cf6','#2a1450','#3b2070'],['Campaigns',campaigns.length,'c','#2dd4bf','#0c2a33','#143c47'],['Completed tasks',done,'tg','#d946ef','#3a1250','#4d1a66']];
+ cards.innerHTML=metrics.map(([label,value,icon,col,g,c2],i)=>`<div class="m" style="--g:${g};--c2:${c2}"><div class="ic">${ic(icon)}</div><h3>${label}</h3><div class="v">${value}</div><div class="tr">Based on saved records</div></div>`).join('');
+ const actions=[['AI Image Generator','img','ai-studio','Create image prompts and assets.'],['Text Generator','doc','ai-studio','Draft and refine content.'],['Data Analyzer','a','analytics','Review your workspace data.'],['Code Assistant','code','assistant','Open the assistant workspace.']];
+ tools.innerHTML=actions.map(([label,icon,go,desc])=>`<button class="tool" data-go="${go}"><div class="h"><span class="ic">${ic(icon)}</span>${label}</div><p>${desc}</p><svg class="ar" viewBox="0 0 24 24">${I.ar}</svg></button>`).join('');
+ const cloud= !supa?'Supabase client not initialized':!currentUser?'Not signed in':!cloudReady?'Cloud sync is loading or unavailable':'Signed in; configured cloud tables sync when saved';
+ const note=$('#dash_note'); if(note)note.textContent=`Live workspace counts: ${clients.length} clients · ${open} open tasks · ${campaigns.length} campaigns · ${calendar.length} calendar items. Cloud: ${cloud}. AI tools require a configured endpoint.`;
+}
+
+// Interactive campaign journey preview; visual only, no campaign is published.
+(function(){
+ const stages=[...document.querySelectorAll('.journey-stage')],status=document.getElementById('journeyStatus'),run=document.getElementById('journeyRun'),motion=document.getElementById('journeyMotion');
+ if(!stages.length||!status||!run)return;let active=0,timer=null;
+ const names=['Plan','Create','Schedule','Launch','Analyse'];
+ function selectStage(i){active=(i+stages.length)%stages.length;stages.forEach((b,j)=>{b.classList.toggle('active',j===active);b.setAttribute('aria-pressed',j===active?'true':'false')});status.textContent='Preview stage: '+names[active]+' · This is a visual demo and does not publish campaigns.'}
+ stages.forEach((b)=>b.addEventListener('click',()=>{clearInterval(timer);timer=null;run.textContent='Run preview';selectStage(Number(b.dataset.stage))}));
+ run.addEventListener('click',()=>{if(timer){clearInterval(timer);timer=null;run.textContent='Run preview';return}selectStage(0);if(motion&&motion.beginElement)motion.beginElement();run.textContent='Stop preview';timer=setInterval(()=>selectStage(active+1),1000)});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden&&timer){clearInterval(timer);timer=null;run.textContent='Run preview'}});
+})();
+document.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b&&b.dataset.go)location.hash=b.dataset.go});
+// Dashboard performance chart: real user-entered records, never fabricated values.
+const PERF_KEY='rabta.performance.monthly';
+let perfEditId=null;
+function getPerfRecords(){try{const x=JSON.parse(localStorage.getItem(PERF_KEY)||'[]');return Array.isArray(x)?x:[]}catch(e){return []}}
+function savePerfRecords(rows){try{localStorage.setItem(PERF_KEY,JSON.stringify(rows));return true}catch(e){toast('Could not save: browser storage may be full');return false}}
+function renderPerfChart(){
+ const c=$('#chart'); if(!c)return;
+ const rows=getPerfRecords().filter(x=>x&&/^\d{4}-\d{2}$/.test(x.month)&&Number.isFinite(Number(x.value))&&Number(x.value)>=0).sort((a,b)=>a.month.localeCompare(b.month)).slice(-7);
+ const title=$('#perfMetricTitle');
+ if(title)title.innerHTML='Monthly revenue <span class="badge">Your data</span>';
+ if(!rows.length){c.innerHTML='<div class="empty" style="margin:12px 0;padding:22px;text-align:center"><b>No performance data yet</b><p class="sub" style="margin:8px 0 12px">Add monthly revenue values to display a real chart. No sample values are used.</p><button class="btn" type="button" id="perfEmptyAdd">+ Add first record</button></div>';const b=$('#perfEmptyAdd');if(b)b.onclick=openPerfDialog;return}
+ const W=640,H=280,L=54,R=16,T=18,B=42,max=Math.max(1,...rows.map(r=>Number(r.value))),top=max*1.15;
+ const X=i=>rows.length===1?(W+L-R)/2:L+i*(W-L-R)/Math.max(1,rows.length-1),Y=v=>T+(1-v/top)*(H-T-B);
+ let svg=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Monthly revenue chart from entered data"><defs><linearGradient id="perfFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a855f7" stop-opacity=".3"/><stop offset="1" stop-color="#a855f7" stop-opacity="0"/></linearGradient></defs>`;
+ for(let i=0;i<=4;i++){const v=top*i/4,y=Y(v);svg+=`<line x1="${L}" x2="${W-R}" y1="${y}" y2="${y}" stroke="#2b183a" stroke-dasharray="3 5"/><text x="${L-8}" y="${y+4}" text-anchor="end" fill="#b7a9c8" font-size="10">${v.toLocaleString(undefined,{maximumFractionDigits:0})}</text>`}
+ const d=rows.map((r,i)=>(i?'L':'M')+X(i)+' '+Y(Number(r.value))).join(' ');
+ svg+=`<path d="${d} L${X(rows.length-1)} ${H-B} L${X(0)} ${H-B} Z" fill="url(#perfFill)"/><path d="${d}" fill="none" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
+ rows.forEach((r,i)=>{svg+=`<circle cx="${X(i)}" cy="${Y(Number(r.value))}" r="4.5" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2"><title>${r.month}: ${Number(r.value).toLocaleString()}</title></circle><text x="${X(i)}" y="${H-16}" text-anchor="middle" fill="#b7a9c8" font-size="10">${r.month}</text>`});
+ c.innerHTML=svg+'</svg>';
+}
+function renderPerfRecords(){const box=$('#perfRecords');if(!box)return;const rows=getPerfRecords().sort((a,b)=>b.month.localeCompare(a.month));if(!rows.length){box.innerHTML='<p class="sub">No records saved yet.</p>';return}box.innerHTML=rows.map(r=>`<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid var(--bd)"><span>${r.month} · ${Number(r.value).toLocaleString()}</span><span style="display:flex;gap:6px"><button type="button" class="btn g" data-perf-edit="${r.id}">Edit</button><button type="button" class="btn g" data-perf-delete="${r.id}">Delete</button></span></div>`).join('')}
+function openPerfDialog(){const d=$('#perfDialog');perfEditId=null;$('#perfMonth').value=new Date().toISOString().slice(0,7);$('#perfValue').value='';$('#perfErr').textContent='';$('#perfSave').textContent='Add data';renderPerfRecords();d.showModal()}
+$('#perfManage').addEventListener('click',openPerfDialog);$('#perfCancel').addEventListener('click',()=>$('#perfDialog').close());
+$('#perfForm').addEventListener('submit',e=>{e.preventDefault();const month=$('#perfMonth').value,value=Number($('#perfValue').value);if(!/^\d{4}-\d{2}$/.test(month)||!Number.isFinite(value)||value<0){$('#perfErr').textContent='Enter a valid month and non-negative value.';return}const rows=getPerfRecords();const existing=rows.find(r=>r.month===month&&r.id!==perfEditId);if(existing){$('#perfErr').textContent='There is already a record for this month. Edit that record instead.';return}if(perfEditId){const r=rows.find(x=>x.id===perfEditId);if(r){r.month=month;r.value=value}}else rows.push({id:'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),month,value});if(savePerfRecords(rows)){renderPerfChart();renderPerfRecords();perfEditId=null;$('#perfMonth').value=new Date().toISOString().slice(0,7);$('#perfValue').value='';$('#perfSave').textContent='Add data';$('#perfErr').textContent='Saved.'}});
+$('#perfRecords').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const rows=getPerfRecords(),id=b.dataset.perfEdit||b.dataset.perfDelete,r=rows.find(x=>x.id===id);if(!r)return;if(b.dataset.perfEdit){perfEditId=r.id;$('#perfMonth').value=r.month;$('#perfValue').value=r.value;$('#perfSave').textContent='Save changes';$('#perfErr').textContent='Editing '+r.month+'.'}else if(confirm('Delete the '+r.month+' record?')){savePerfRecords(rows.filter(x=>x.id!==id));if(perfEditId===id)perfEditId=null;renderPerfChart();renderPerfRecords()}});
+function renderWorkspaceIndex(){
+ const clients=Array.isArray(CL)?CL.filter(x=>!x.archived):[],tasks=Array.isArray(DB.tasks)?DB.tasks:[],campaigns=Array.isArray(DB.cmp)?DB.cmp:[];
+ const taskScore=tasks.length?tasks.filter(t=>t.status==='Done').length/tasks.length*100:0;
+ const clientScore=clients.length?clients.filter(c=>String(c.name||'').trim()&&String(c.industry||'').trim()).length/clients.length*100:0;
+ const campaignScore=campaigns.length?campaigns.filter(c=>c.status==='Active').length/campaigns.length*100:0;
+ const score=Math.round(taskScore*.5+clientScore*.3+campaignScore*.2);
+ const scoreEl=$('#indexScore');if(scoreEl)scoreEl.textContent=score+'%';
+ const reliabilityScore=Math.round((taskScore+clientScore+campaignScore)/3);
+ const lg=$('#lg');if(lg)lg.innerHTML=[['Performance',Math.round(taskScore),'#c8f03c'],['Accuracy',Math.round(clientScore),'#3b9cff'],['Efficiency',Math.round(campaignScore),'#2dd4bf'],['Reliability',reliabilityScore,'#d946ef']].map(([n,v,c])=>`<div><i style="background:${c}"></i>${n}<b>${v}%</b></div>`).join('');
+ const gauge=$('#gauge');if(gauge){
+  const old=gauge.querySelector('svg');if(old)old.remove();
+  // Restore the original multicolor segmented confidence-gauge artwork.
+  const cx=150,cy=150,N=44,cols=[[0,78],[.35,170],[.65,215],[1,310]];
+  const hue=f=>{for(let i=1;i<cols.length;i++)if(f<=cols[i][0]){const a=cols[i-1],b=cols[i];return a[1]+(b[1]-a[1])*(f-a[0])/(b[0]-a[0])}return 310};
+  let svg='<svg viewBox="0 0 300 175" aria-hidden="true">';
+  for(let i=0;i<N;i++){const f=i/(N-1),a=Math.PI*(1-f),r1=96,r2=96+(i%2?16:22),c=Math.cos(a),n=Math.sin(a);svg+=`<line x1="${cx+c*r1}" y1="${cy-n*r1}" x2="${cx+c*(r2+4)}" y2="${cy-n*(r2+4)}" stroke="hsl(${hue(f)} 90% 58%)" stroke-width="4.2" stroke-linecap="round"/>`}
+  for(let i=0;i<60;i++){const a=Math.PI*(1-i/59);svg+=`<circle cx="${cx+Math.cos(a)*82}" cy="${cy-Math.sin(a)*82}" r="1.2" fill="hsl(${hue(i/59)} 80% 60%)" opacity=".75"/>`}
+  [['0',150,12,'middle'],['-50',78,30,'middle'],['-50',222,30,'middle'],['-100',16,106,'middle'],['-50',284,106,'middle']].forEach(([t,x,y,a])=>svg+=`<text x="${x}" y="${y}" text-anchor="${a}" fill="#B7A9C8" font-size="9">${t}</text>`);
+  gauge.insertAdjacentHTML('afterbegin',svg+'</svg>');
+ }
+}
+addEventListener('resize',()=>{});
 // tools
 [['AI Image Generator','img','Create stunning images from text prompts.'],['Text Generator','doc','Generate high-quality content instantly.'],['Data Analyzer','a','Analyze complex data and gain insights with AI.'],['Code Assistant','code','Generate, fix, and improve code with smart AI support.']].forEach(([n,k,d])=>{
  const b=document.createElement('button');b.className='tool';b.innerHTML=`<div class="h"><span class="ic">${ic(k)}</span>${n}</div><p>${d}</p><svg class="ar" viewBox="0 0 24 24">${I.ar}</svg>`;b.onclick=()=>toast(n+' is a demo card — not connected to AI yet');$('#tools').append(b)});
@@ -395,11 +457,11 @@ $('#v-studio').addEventListener('click',async e=>{const b=e.target.closest('butt
   const c=CL.find(x=>x.id===$('#s_c').value);b.disabled=true;b.textContent='Generating…';
   try{const r=await AI.generate({client:c,models:mine('models').map(m=>({type:m.type,name:m.name,desc:m.desc})),type:$('#s_t').value,platform:$('#s_p').value,language:$('#s_l').value,tone:$('#s_o').value||'neutral',topic});$('#s_r').value=r.text;if($('#s_l').value==='Arabic'&&r.demo)toast('Demo mode writes English only; real AI will follow the language')}
   catch(x){$('#s_e').textContent=x.message}finally{b.disabled=false;b.textContent='Generate'}}});
-$('#all').onclick=e=>{e.preventDefault();location.hash='ai-studio'};
+document.querySelectorAll('#all').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();location.hash='ai-studio'}));
 // ---- shared data: campaigns & calendar (per client, saved in this browser only) ----
 const DK='rabta.data';let DB={cmp:[],cal:[]},calM=new Date();calM.setDate(1);
-try{const j=JSON.parse(localStorage.getItem(DK)||'null');if(j&&j.cmp&&j.cal)DB=j}catch(e){}
-const saveD=()=>{try{localStorage.setItem(DK,JSON.stringify(DB))}catch(e){}; ['tasks','cmp'].forEach(k=>queueCloudSync(k,DB[k]||[]));},uid=()=>'i'+Date.now()+Math.random().toString(36).slice(2,6);
+try{const j=JSON.parse(localStorage.getItem(DK)||'null');if(j&&typeof j==='object')DB={...DB,...j}}catch(e){}
+const saveD=()=>{try{localStorage.setItem(DK,JSON.stringify(DB))}catch(e){toast('Could not save locally: browser storage may be full')} ['tasks','cmp'].forEach(k=>queueCloudSync(k,DB[k]||[])); queueWorkspaceSync();},uid=()=>'i'+Date.now()+Math.random().toString(36).slice(2,6);
 const CS=['Planned','Active','Paused','Done'],PS=['Idea','Draft','Scheduled','Posted'],SC={Planned:'#38bdf8',Active:'#22c55e',Paused:'#f59e0b',Done:'#a855f7',Idea:'#38bdf8',Draft:'#f59e0b',Scheduled:'#a855f7',Posted:'#22c55e'};
 const d2=$('#dg2');let d2s=null,d2d=null;
 function form2(title,fs,v,onSave,onDel){$('#d2t').textContent=title;$('#d2e').textContent='';
@@ -429,7 +491,7 @@ $('#v-cal').addEventListener('click',e=>{if(e.target.closest('#cp')){calM.setMon
  form2(it?'Edit content':'New content',EF,it||{date:day.dataset.d},o=>{if(it)Object.assign(it,o);else DB.cal.push({id:uid(),cid:ACT,...o});saveD();renderCal();toast('Saved')},it?()=>{DB.cal=DB.cal.filter(x=>x!==it);saveD();renderCal()}:null)});
 $('#v-cal').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.classList.contains('day'))e.target.click()});
 // ---- team tasks ----
-DB.tasks=DB.tasks||[];DB.agents=DB.agents||[];DB.models=DB.models||[];DB.chats=DB.chats||[];DB.asst=DB.asst||{lang:'en'};DB.auto=DB.auto||{on:{},log:[],last:{}};DB.auto.last=DB.auto.last||{};DB.agents.forEach(a=>{if(a.status==='Running')a.status='Paused'});
+DB.tasks=DB.tasks||[];DB.agents=DB.agents||[];DB.models=DB.models||[];DB.sales=DB.sales||[];DB.platformMetrics=DB.platformMetrics||[];DB.chats=DB.chats||[];DB.asst=DB.asst||{lang:'en'};DB.auto=DB.auto||{on:{},log:[],last:{}};DB.auto.last=DB.auto.last||{};DB.agents.forEach(a=>{if(a.status==='Running')a.status='Paused'});
 Object.assign(SC,{'To do':'#38bdf8','In progress':'#f59e0b',High:'#ef4444',Medium:'#f59e0b',Low:'#22c55e',Running:'#22c55e',Paused:'#f59e0b','Needs approval':'#a855f7',Cancelled:'#81738F',Completed:'#22c55e'});
 function renderTasks(){const v=$('#v-tasks');if(!ACT){v.innerHTML=noClient;return}const t0=fmt(new Date()),l=mine('tasks'),od=x=>x.status!=='Done'&&x.due&&x.due<t0,pr={High:0,Medium:1,Low:2},srt=a=>a.sort((x,y)=>(x.due||'9').localeCompare(y.due||'9')||pr[x.priority]-pr[y.priority]);
  const g=[['Overdue',srt(l.filter(od))],['Open',srt(l.filter(x=>x.status!=='Done'&&!od(x)))],['Completed',srt(l.filter(x=>x.status==='Done'))]];
@@ -457,11 +519,47 @@ const cnt=(a,k,vs)=>vs.map(v=>[v,a.filter(x=>x[k]===v).length,SC[v]]);
 function bars(d){if(!d.some(x=>x[1]))return'<div class="empty">No data yet.</div>';const m=Math.max(1,...d.map(x=>x[1]));
  return `<svg viewBox="0 0 320 160" role="img" aria-label="Bar chart" style="width:100%">${d.map((x,i)=>{const h=x[1]/m*100,cx=i*80+40;return `<rect x="${cx-18}" y="${125-h}" width="36" height="${h}" rx="7" fill="${x[2]}" opacity=".85"/><text x="${cx}" y="${119-h}" text-anchor="middle" fill="#fff" font-size="12">${x[1]}</text><text x="${cx}" y="148" text-anchor="middle" fill="#B7A9C8" font-size="11">${esc(x[0])}</text>`}).join('')}</svg>`}
 function stats(){const c=mine('cmp'),e=mine('cal'),t=mine('tasks'),a=mine('agents'),t0=fmt(new Date());return{c,e,t,a,od:t.filter(x=>x.status!=='Done'&&x.due&&x.due<t0).length,done:t.filter(x=>x.status==='Done').length}}
-function renderAna(){const v=$('#v-ana');if(!ACT){v.innerHTML=noClient;return}const s=stats(),pct=s.t.length?Math.round(s.done/s.t.length*100)+'%':'\u2014',k=(l,x)=>`<div class="cc"><div>${l}</div><b>${x}</b></div>`,P=(h,b)=>`<div class="panel" style="background:#10051b"><h2 style="margin:0 0 8px;font-size:13px;font-weight:500">${h}</h2>${b}</div>`;
- v.innerHTML=`<div class="ch"><div><h1>Analytics &amp; Reports</h1><p class="sub">For ${cname()}. Built from data saved in this app.</p></div><span class="badge2">No social performance data connected</span></div><div class="kp">${k('Active campaigns',s.c.filter(x=>x.status==='Active').length)}${k('Content items',s.e.length)}${k('Tasks completed',pct)}${k('Overdue tasks',s.od)}</div><div class="two">${P('Campaigns by status',bars(cnt(s.c,'status',CS)))}${P('Content by status',bars(cnt(s.e,'status',PS)))}${P('Tasks',bars([...cnt(s.t,'status',['To do','In progress','Done']),['Overdue',s.od,'#ef4444']]))}${P('Report',`<textarea id="an_r" aria-label="Report" style="min-height:170px;width:100%;background:#0d0418;border:1px solid var(--bd);border-radius:10px;color:#fff;padding:9px;font:inherit;font-size:12px;line-height:1.6"></textarea><div style="display:flex;gap:8px;margin-top:8px"><button class="btn" id="an_g">Build report</button><button class="btn g" id="an_c">Copy</button></div>`)}</div>`}
+function renderAna(){
+ const v=$('#v-ana');if(!ACT){v.innerHTML=noClient;return}
+ const s=stats(),active=s.c.filter(x=>x.status==='Active').length,donePct=s.t.length?Math.round(s.done/s.t.length*100):null;
+ const allSales=(DB.sales||[]).filter(x=>x.cid===ACT),allPlatforms=(DB.platformMetrics||[]).filter(x=>x.cid===ACT);
+ const range=Number($('#an_range')?.value||30),cut=new Date();cut.setDate(cut.getDate()-range);const cutDate=fmt(cut);
+ const sales=allSales.filter(x=>!x.date||x.date>=cutDate),platforms=allPlatforms.filter(x=>!x.date||x.date>=cutDate);
+ const sum=(a,k)=>a.reduce((n,x)=>n+(Number(x[k])||0),0),money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(n);
+ const icon=(name)=>({revenue:'$','campaigns':'◈',clients:'♙',tasks:'✓'}[name]||'•');
+ const metric=(name,label,value,foot)=>`<article class="ana-kpi"><div class="ana-kpi-top"><span>${label}</span><span class="ana-icon">${icon(name)}</span></div><div class="ana-value">${value}</div><div class="ana-foot">${foot}</div></article>`;
+ const empty=(txt)=>`<div class="ana-empty"><span>＋</span><p>${txt}</p></div>`;
+ const panel=(title,sub,body,action='')=>`<section class="ana-card"><header class="ana-card-head"><div><h2>${title}</h2>${sub?`<p>${sub}</p>`:''}</div>${action}</header>${body}</section>`;
+ const campaignRows=cnt(s.c,'status',CS).filter(x=>x[1]>0);
+ const campaignBody=campaignRows.length?`<div class="ana-status-list">${campaignRows.map(x=>`<div class="ana-status-row"><span class="ana-dot" style="background:${x[2]||'var(--v)'}"></span><span>${esc(x[0])}</span><b>${x[1]}</b><div class="ana-track"><i style="width:${Math.round(x[1]/Math.max(1,s.c.length)*100)}%"></i></div></div>`).join('')}</div>`:empty('No campaign data for this client yet. Add campaigns to see performance here.');
+ const byPlatform={};platforms.forEach(x=>{const k=x.platform||'Other';byPlatform[k]=(byPlatform[k]||0)+(Number(x.revenue)||0)});
+ const platformEntries=Object.entries(byPlatform).sort((a,b)=>b[1]-a[1]);
+ const platformBody=platformEntries.length?`<div class="ana-status-list">${platformEntries.map(([name,val])=>`<div class="ana-status-row"><span class="ana-dot" style="background:var(--v)"></span><span>${esc(name)}</span><b>${money(val)}</b><div class="ana-track"><i style="width:${Math.min(100,Math.round(val/Math.max(1,...platformEntries.map(x=>x[1]))*100))}%"></i></div></div>`).join('')}</div>`:empty('Add platform metrics below to compare real revenue and leads by channel.');
+ const revenue=sum(sales,'revenue'),orders=sum(sales,'orders'),visits=sum(sales,'visits'),leads=sum(platforms,'leads'),conversions=sum(platforms,'conversions'),conv=leads?Math.round(conversions/leads*1000)/10:null;
+ const summaryBody=`<div class="ana-insights"><div><span>Revenue Growth</span><b>${money(revenue)}</b><small>Recorded revenue in selected period</small></div><div><span>New Leads</span><b>${leads.toLocaleString()}</b><small>Entered platform records</small></div><div><span>Conversion Rate</span><b>${conv===null?'—':conv+'%'}</b><small>${conv===null?'Enter leads and conversions':'Conversions ÷ leads'}</small></div></div>`;
+ const salesBody=allSales.length?`<div class="ana-records">${allSales.slice().sort((a,b)=>(b.date||'').localeCompare(a.date||'')).map(x=>`<div class="ana-record"><div><b>${esc(x.date||'No date')} · ${money(Number(x.revenue)||0)}</b><small>${Number(x.orders)||0} orders · ${Number(x.visits)||0} visits${x.note?' · '+esc(x.note):''}</small></div><div class="ac"><button data-metric-edit="sale" data-id="${x.id}">Edit</button><button data-metric-del="sale" data-id="${x.id}">Delete</button></div></div>`).join('')}</div>`:empty('No sales records yet. Add revenue, orders and visits to populate this section.');
+ const platformChart=allPlatforms.length?`<div class="ana-records">${allPlatforms.slice().sort((a,b)=>(b.date||'').localeCompare(a.date||'')).map(x=>`<div class="ana-record"><div><b>${esc(x.platform)} · ${esc(x.date||'No date')}</b><small>Revenue ${money(Number(x.revenue)||0)} · Spend ${money(Number(x.spend)||0)} · Leads ${Number(x.leads)||0} · Conversions ${Number(x.conversions)||0}</small></div><div class="ac"><button data-metric-edit="platform" data-id="${x.id}">Edit</button><button data-metric-del="platform" data-id="${x.id}">Delete</button></div></div>`).join('')}</div>`:empty('No platform records yet. Add a channel record to make this comparison meaningful.');
+ v.innerHTML=`<div class="ana-page">
+  <div class="ana-titlebar"><div><div class="ana-eyebrow">WORKSPACE INSIGHTS</div><h1>Analytics &amp; Reports</h1><p class="sub">Enter and edit business figures here; every metric is calculated from your saved records.</p></div><div class="ana-title-actions"><label class="ana-date">Date range <select id="an_range" aria-label="Date range"><option value="7" ${range===7?'selected':''}>Last 7 days</option><option value="30" ${range===30?'selected':''}>Last 30 days</option><option value="90" ${range===90?'selected':''}>Last 90 days</option><option value="365" ${range===365?'selected':''}>Last 12 months</option></select></label><span class="ana-connection"><i></i> Saved workspace data</span></div></div>
+  <div class="ana-kpis">${metric('revenue','Total Revenue',money(revenue),`${sales.length} sales records · selected period`)}${metric('campaigns','Active Campaigns',active,`${s.c.length} total campaigns in this client workspace`)}${metric('clients','Total Clients',CL.filter(c=>!c.archived).length,'Active saved client records')}${metric('tasks','Tasks Completed',donePct===null?'—':donePct+'%',`${s.done} of ${s.t.length} tasks marked done`)}</div>
+  <div class="ana-main-grid">${panel('Campaign Performance','Current campaign status from saved workspace data',campaignBody,'<button class="btn g" data-ana-nav="campaigns">Manage</button>')}${panel('Top Platforms','Ranked by entered revenue',platformBody,'<button class="btn" id="an_add_platform">+ Add data</button>')}${panel('Quick Summary','Calculated from records in the selected period',summaryBody)}</div>
+  <div class="ana-bottom-grid">${panel('Sales Overview','Record revenue, orders and visits',salesBody,'<button class="btn" id="an_add_sale">+ Add sales</button>')}${panel('Platform Value','Editable channel performance records',platformChart,'<button class="btn" id="an_add_platform2">+ Add platform</button>')}</div>
+  <div class="ana-report-card"><div><h2>Workspace Report</h2><p>Generate a report from saved campaigns, content, tasks, sales and platform records.</p></div><div class="ana-report-actions"><button class="btn" id="an_g">Build report</button><button class="btn g" id="an_c">Copy report</button></div><textarea id="an_r" aria-label="Generated workspace report" placeholder="Your report will appear here…"></textarea></div>
+  <p class="ana-footnote">Figures are based on data you enter. Currency is displayed in USD; enter all sales and platform amounts in USD for consistent totals. Records are saved with this client in this browser and sync to the workspace cloud when configured.</p>
+ </div>`;
+}
+const saleFields=[{k:'date',l:'Date',t:'date',r:1},{k:'revenue',l:'Revenue (USD)',t:'number',r:1},{k:'orders',l:'Orders',t:'number'},{k:'visits',l:'Visits',t:'number'},{k:'note',l:'Note',t:'text'}];
+const platformFields=[{k:'date',l:'Date',t:'date',r:1},{k:'platform',l:'Platform',t:'select',o:PLATS.map(p=>[p,p]),d:'Instagram'},{k:'spend',l:'Ad spend (USD)',t:'number'},{k:'revenue',l:'Revenue (USD)',t:'number'},{k:'leads',l:'Leads',t:'number'},{k:'conversions',l:'Conversions',t:'number'}];
+function openMetricForm(kind,item){const isSale=kind==='sale',fields=isSale?saleFields:platformFields;form2((item?'Edit ':'Add ')+(isSale?'sales record':'platform metrics'),fields,item||{date:fmt(new Date())},o=>{for(const k of isSale?['revenue','orders','visits']:['spend','revenue','leads','conversions']){const n=Number(o[k]||0);if(!Number.isFinite(n)||n<0)return k+' must be a non-negative number.';o[k]=n}if(isSale){if(item)Object.assign(item,o);else DB.sales.push({id:uid(),cid:ACT,...o})}else{if(o.conversions>o.leads&&o.leads>0)return 'Conversions cannot exceed leads.';if(item)Object.assign(item,o);else DB.platformMetrics.push({id:uid(),cid:ACT,...o})}saveD();renderAna();toast('Analytics data saved')},item?()=>{if(isSale)DB.sales=DB.sales.filter(x=>x!==item);else DB.platformMetrics=DB.platformMetrics.filter(x=>x!==item);saveD();renderAna()}:null)}
+$('#v-ana').addEventListener('change',e=>{if(e.target.id==='an_range')renderAna()});
 $('#v-ana').addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;
- if(b.id==='an_g'){const s=stats(),n=(CL.find(c=>c.id===ACT)||{}).name,f=(a,k,vs)=>vs.map(v=>a.filter(x=>x[k]===v).length+' '+v.toLowerCase()).join(', ');
-  $('#an_r').value=`Marketing report: ${n}\nCreated ${fmt(new Date())} from data saved in this app.\n\nCampaigns: ${s.c.length} (${f(s.c,'status',CS)})\nContent calendar: ${s.e.length} items (${f(s.e,'status',PS)})\nTasks: ${s.t.length} (${s.done} done, ${s.od} overdue)\nAgent tasks: ${s.a.length} (${s.a.filter(x=>x.status==='Completed').length} completed)\n\nNo reach, engagement or sales data is connected, so performance results are not included.`}
+ if(b.dataset.anaNav){location.hash=b.dataset.anaNav;return}
+ if(b.id==='an_add_sale')return openMetricForm('sale');
+ if(b.id==='an_add_platform'||b.id==='an_add_platform2')return openMetricForm('platform');
+ if(b.dataset.metricEdit){const arr=b.dataset.metricEdit==='sale'?DB.sales:DB.platformMetrics;return openMetricForm(b.dataset.metricEdit,arr.find(x=>x.id===b.dataset.id))}
+ if(b.dataset.metricDel){const sale=b.dataset.metricDel==='sale';const arr=sale?DB.sales:DB.platformMetrics;const item=arr.find(x=>x.id===b.dataset.id);if(item&&confirm('Delete this analytics record?')){if(sale)DB.sales=arr.filter(x=>x!==item);else DB.platformMetrics=arr.filter(x=>x!==item);saveD();renderAna();toast('Record deleted')}return}
+ if(b.id==='an_g'){const s=stats(),n=(CL.find(c=>c.id===ACT)||{}).name,f=(a,k,vs)=>vs.map(v=>a.filter(x=>x[k]===v).length+' '+v.toLowerCase()).join(', '),ss=(DB.sales||[]).filter(x=>x.cid===ACT),pm=(DB.platformMetrics||[]).filter(x=>x.cid===ACT),sum=(a,k)=>a.reduce((n,x)=>n+(Number(x[k])||0),0);
+  $('#an_r').value=`Workspace report: ${n}\nCreated ${fmt(new Date())} from saved application records.\n\nCampaigns: ${s.c.length} (${f(s.c,'status',CS)})\nContent calendar: ${s.e.length} items (${f(s.e,'status',PS)})\nTasks: ${s.t.length} (${s.done} done, ${s.od} overdue)\nAgent tasks: ${s.a.length} (${s.a.filter(x=>x.status==='Completed').length} completed)\nClients: ${CL.length}\n\nSales records: ${ss.length}; recorded revenue: USD ${sum(ss,'revenue').toFixed(2)}; orders: ${sum(ss,'orders')}; visits: ${sum(ss,'visits')}\nPlatform records: ${pm.length}; spend: USD ${sum(pm,'spend').toFixed(2)}; revenue: USD ${sum(pm,'revenue').toFixed(2)}; leads: ${sum(pm,'leads')}; conversions: ${sum(pm,'conversions')}\n\nFigures are based only on records entered in this workspace.`}
  if(b.id==='an_c'){const v=$('#an_r').value;if(!v)return toast('Build the report first');try{await navigator.clipboard.writeText(v);toast('Copied')}catch(x){$('#an_r').select();toast('Select the text and copy it manually')}}});
 // ---- settings ----
 const SK='rabta.settings';let SET={name:'Alex Morgan',endpoint:''};
@@ -474,7 +572,7 @@ $('#v-set').addEventListener('click',e=>{const b=e.target.closest('button');if(!
   if(!n){$('#st_x').textContent='Enter a display name.';return}
   if(u&&!/^(https:\/\/[^\s]+|\/[^\s]*)$/.test(u)){$('#st_x').textContent='Enter a full https:// URL, or leave it empty for demo mode.';return}
   SET={name:n,endpoint:u};try{localStorage.setItem(SK,JSON.stringify(SET))}catch(x){}applySet();renderSet();toast('Settings saved')}
- if(b.id==='st_r'&&confirm('Delete all clients, campaigns, calendar items, tasks and settings from this browser?')){try{['rabta.clients','rabta.data',SK].forEach(k=>localStorage.removeItem(k))}catch(x){}location.reload()}});
+ if(b.id==='st_r'&&confirm('Delete all RABTA data stored in this browser? This does not delete Supabase cloud data.')){try{['rabta.clients','rabta.data',SK].forEach(k=>localStorage.removeItem(k))}catch(x){}location.reload()}});
 // ---- Supabase authentication ----
 const SS='rabta.session'; let am='in', supa=null, currentUser=null;
 const LS=document.querySelector('.brand img').src;
@@ -521,6 +619,8 @@ if(supa){
 const cloudTables={clients:'rabta_clients',tasks:'rabta_tasks',cmp:'rabta_campaigns'};
 // Each data type gets its own debounce timer so a client save cannot cancel a task/campaign save.
 let cloudReady=false;
+let workspaceSyncTimer=null;
+function queueWorkspaceSync(){ if(!supa||!currentUser||!cloudReady)return; clearTimeout(workspaceSyncTimer); const snapshot=JSON.parse(JSON.stringify(DB)); workspaceSyncTimer=setTimeout(async()=>{try{const {error}=await supa.from('rabta_workspace_data').upsert({user_id:currentUser.id,data:snapshot,updated_at:new Date().toISOString()},{onConflict:'user_id'});if(error)throw error;toast('Workspace synced to Supabase')}catch(e){console.error('Workspace cloud sync failed:',e);toast('Workspace is saved locally; cloud sync needs the rabta_workspace_data table.')}} ,500); }
 const cloudSyncTimers={clients:null,tasks:null,cmp:null};
 function queueCloudSync(kind,items){
  if(!cloudTables[kind])return;
@@ -544,19 +644,34 @@ async function syncCloudKind(kind,items){
 async function loadCloudData(){
  if(!supa||!currentUser)return; cloudReady=false;
  try{
-  const [cr,tr,pr]=await Promise.all([supa.from('rabta_clients').select('data'),supa.from('rabta_tasks').select('data'),supa.from('rabta_campaigns').select('data')]);
-  for(const r of [cr,tr,pr])if(r.error)throw r.error;
-  CL=(cr.data||[]).map(r=>r.data).filter(x=>x&&x.id); if(!CL.some(c=>c.id===ACT&&!c.archived))ACT=(CL.find(c=>!c.archived)||{}).id||null;
-  DB.tasks=(tr.data||[]).map(r=>r.data).filter(Boolean); DB.cmp=(pr.data||[]).map(r=>r.data).filter(Boolean);
+  const [cr,tr,pr,wr]=await Promise.all([
+   supa.from('rabta_clients').select('data').eq('user_id',currentUser.id),
+   supa.from('rabta_tasks').select('data').eq('user_id',currentUser.id),
+   supa.from('rabta_campaigns').select('data').eq('user_id',currentUser.id),
+   supa.from('rabta_workspace_data').select('data').eq('user_id',currentUser.id).maybeSingle()
+  ]);
+  for(const r of [cr,tr,pr,wr])if(r.error)throw r.error;
+  // Preserve browser data if the corresponding cloud collection is empty; do not silently erase it.
+  const cloudClients=(cr.data||[]).map(r=>r.data).filter(x=>x&&x.id);
+  const cloudTasks=(tr.data||[]).map(r=>r.data).filter(Boolean);
+  const cloudCampaigns=(pr.data||[]).map(r=>r.data).filter(Boolean);
+  if(cloudClients.length)CL=cloudClients; else if(CL.length)queueCloudSync('clients',CL);
+  if(!CL.some(c=>c.id===ACT&&!c.archived))ACT=(CL.find(c=>!c.archived)||{}).id||null;
+  if(wr.data&&wr.data.data&&typeof wr.data.data==='object')DB={...DB,...wr.data.data};
+  if(cloudTasks.length)DB.tasks=cloudTasks; else if((DB.tasks||[]).length)queueCloudSync('tasks',DB.tasks);
+  if(cloudCampaigns.length)DB.cmp=cloudCampaigns; else if((DB.cmp||[]).length)queueCloudSync('cmp',DB.cmp);
+  DB.cmp=Array.isArray(DB.cmp)?DB.cmp:[];DB.cal=Array.isArray(DB.cal)?DB.cal:[];DB.tasks=Array.isArray(DB.tasks)?DB.tasks:[];DB.agents=Array.isArray(DB.agents)?DB.agents:[];DB.models=Array.isArray(DB.models)?DB.models:[];DB.chats=Array.isArray(DB.chats)?DB.chats:[];DB.auto=DB.auto||{on:{},log:[],last:{}};DB.asst=DB.asst||{lang:'en'};
   try{localStorage.setItem(K,JSON.stringify({list:CL,act:ACT}));localStorage.setItem(DK,JSON.stringify(DB));}catch(e){}
-  cloudReady=true; route(); toast('Cloud data loaded');
- }catch(e){cloudReady=false;toast('Could not load cloud data: '+(e.message||'check tables and RLS'));}
+  cloudReady=true; route();
+  if(!wr.data)queueWorkspaceSync();
+  toast('Cloud data loaded');
+ }catch(e){cloudReady=false;console.error('RABTA cloud load failed:',e);toast('Cloud load failed. Local data was kept: '+(e.message||'check SQL migration and RLS'));}
 }
 if(supa){supa.auth.onAuthStateChange((event,session)=>{currentUser=session?.user||null;showAuth();if(session?.user){cloudReady=false;setTimeout(()=>loadCloudData(),0)}else cloudReady=false;});supa.auth.getSession().then(({data})=>{currentUser=data.session?.user||null;showAuth();if(currentUser)loadCloudData()}).catch(()=>showAuth())}
 // ---- data models (brand knowledge per client) ----
 const MT=['Audience persona','Content pillar','Product / service','Brand rule'];
 function renderMod(){const v=$('#v-mod');if(!ACT){v.innerHTML=noClient;return}const l=mine('models');
- v.innerHTML=`<div class="ch"><div><h1>Data Models</h1><p class="sub">Brand knowledge for ${cname()}. Saved in this browser only. Sent with AI requests when a server is connected (demo mode ignores it).</p></div><button class="btn" id="nm2">New model</button></div>`+(l.length?`<div class="cg">${l.map(m=>`<div class="cc" data-id="${m.id}"><h3>${esc(m.name)}</h3><div><span class="chip">${esc(m.type)}</span></div><div>${esc(m.desc||'No description')}</div><div class="ac"><button data-a="e">Edit</button></div></div>`).join('')}</div>`:'<div class="empty">No data models yet. Add personas, content pillars, products or brand rules.</div>')}
+ v.innerHTML=`<div class="ch"><div><h1>Data Models</h1><p class="sub">Brand knowledge for ${cname()}. Saved locally and synced to your workspace when the cloud table is configured. Sent with AI requests when a server is connected.</p></div><button class="btn" id="nm2">New model</button></div>`+(l.length?`<div class="cg">${l.map(m=>`<div class="cc" data-id="${m.id}"><h3>${esc(m.name)}</h3><div><span class="chip">${esc(m.type)}</span></div><div>${esc(m.desc||'No description')}</div><div class="ac"><button data-a="e">Edit</button></div></div>`).join('')}</div>`:'<div class="empty">No data models yet. Add personas, content pillars, products or brand rules.</div>')}
 const MF=[{k:'name',l:'Name',t:'text',r:1},{k:'type',l:'Type',t:'select',o:MT.map(x=>[x,x]),d:MT[0]},{k:'desc',l:'Description',t:'textarea'}];
 $('#v-mod').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const card=b.closest('.cc'),m=card&&DB.models.find(x=>x.id===card.dataset.id);if(b.id!=='nm2'&&b.dataset.a!=='e')return;
  form2(m?'Edit model':'New model',MF,m||{},o=>{if(m)Object.assign(m,o);else DB.models.push({id:uid(),cid:ACT,...o});saveD();renderMod();toast('Saved')},m?()=>{DB.models=DB.models.filter(x=>x!==m);saveD();renderMod()}:null)});
@@ -568,7 +683,7 @@ function runAuto(){const A=DB.auto;if(!Object.values(A.on).some(Boolean))return 
  if(A.on.ended)DB.cmp.forEach(c=>{if((c.status==='Active'||c.status==='Planned')&&c.end&&c.end<t0){c.status='Done';lg('Closed ended campaign: '+c.name)}});
  if(A.on.weekly)CL.filter(c=>!c.archived).forEach(c=>{const k='wk:'+c.id;if(A.last[k]!==wid&&!DB.cal.some(x=>x.cid===c.id&&x.date>=t0&&x.date<=nx)){DB.tasks.push({id:uid(),cid:c.id,title:'Plan next week\u2019s content',who:'',priority:'Medium',due:nx,status:'To do'});A.last[k]=wid;lg('Created a content-planning task for '+c.name)}});
  if(n)saveD();return n}
-function renderAuto(){const A=DB.auto;$('#v-auto').innerHTML=`<div class="ch"><div><h1>Automation</h1><p class="sub">Simple rules that act on your saved data. They run in this browser only, and only while the app is open.</p></div><button class="btn g" id="ar">Run rules now</button></div><div class="cg">${RULES.map(r=>`<div class="cc"><h3>${r[1]}</h3><div>${r[2]}</div><div class="ac"><button data-r="${r[0]}" class="${A.on[r[0]]?'onb':''}" aria-pressed="${!!A.on[r[0]]}">${A.on[r[0]]?'On':'Off'}</button></div></div>`).join('')}</div><h2 style="font-size:13px;font-weight:500;margin:20px 0 8px">Activity</h2>${A.log.length?A.log.map(x=>`<div class="lgi"><span>${esc(x.m)}</span><i>${esc(x.t)}</i></div>`).join(''):'<div class="empty">No automation activity yet.</div>'}`}
+function renderAuto(){const A=DB.auto;$('#v-auto').innerHTML=`<div class="ch"><div><h1>Automation</h1><p class="sub">Simple rules that act on saved data when you open the app. They do not run in the background while the app is closed.</p></div><button class="btn g" id="ar">Run rules now</button></div><div class="cg">${RULES.map(r=>`<div class="cc"><h3>${r[1]}</h3><div>${r[2]}</div><div class="ac"><button data-r="${r[0]}" class="${A.on[r[0]]?'onb':''}" aria-pressed="${!!A.on[r[0]]}">${A.on[r[0]]?'On':'Off'}</button></div></div>`).join('')}</div><h2 style="font-size:13px;font-weight:500;margin:20px 0 8px">Activity</h2>${A.log.length?A.log.map(x=>`<div class="lgi"><span>${esc(x.m)}</span><i>${esc(x.t)}</i></div>`).join(''):'<div class="empty">No automation activity yet.</div>'}`}
 $('#v-auto').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
  if(b.dataset.r){const A=DB.auto;A.on[b.dataset.r]=!A.on[b.dataset.r];saveD();const n=runAuto();renderAuto();if(n)toast(n+' action'+(n>1?'s':'')+' done');return}
  if(b.id==='ar'){const n=runAuto();renderAuto();toast(n?n+' action'+(n>1?'s':'')+' done':'Nothing to do right now')}});
@@ -646,7 +761,7 @@ $('#v-asst').addEventListener('keydown',e=>{if(e.target.id==='as_i'&&e.key==='En
 function route(){const h=location.hash.slice(1);
  if(!['','dashboard','clients','ai-studio','campaigns','calendar','ai-agents','team-tasks','analytics','settings','data-models','automation','assistant'].includes(h)){toast('This page is not built in this preview yet');location.hash={clients:'clients',studio:'ai-studio',cmp:'campaigns',cal:'calendar',agents:'ai-agents',tasks:'team-tasks',ana:'analytics',set:'settings',mod:'data-models',auto:'automation',asst:'assistant'}[cur]||'';return}
  cur={'ai-studio':'studio',clients:'clients',campaigns:'cmp',calendar:'cal','ai-agents':'agents','team-tasks':'tasks',analytics:'ana',settings:'set','data-models':'mod',automation:'auto',assistant:'asst'}[h]||'dashboard';
- runAuto();$('#v-dash').hidden=cur!=='dashboard';$('#v-clients').hidden=cur!=='clients';$('#v-studio').hidden=cur!=='studio';if(cur==='clients')renderClients();if(cur==='studio')renderStudio();$('#v-cmp').hidden=cur!=='cmp';$('#v-cal').hidden=cur!=='cal';if(cur==='cmp')renderCmp();if(cur==='cal')renderCal();$('#v-agents').hidden=cur!=='agents';$('#v-tasks').hidden=cur!=='tasks';if(cur==='agents')renderAgents();if(cur==='tasks')renderTasks();$('#v-ana').hidden=cur!=='ana';$('#v-set').hidden=cur!=='set';if(cur==='ana')renderAna();if(cur==='set')renderSet();$('#v-mod').hidden=cur!=='mod';$('#v-auto').hidden=cur!=='auto';if(cur==='mod')renderMod();if(cur==='auto')renderAuto();$('#v-asst').hidden=cur!=='asst';if(cur==='asst')renderAsst();
+ runAuto();$('#v-dash').hidden=cur!=='dashboard';if(cur==='dashboard'){renderDashboard();renderPerfChart();renderWorkspaceIndex();}$('#v-clients').hidden=cur!=='clients';$('#v-studio').hidden=cur!=='studio';if(cur==='clients')renderClients();if(cur==='studio')renderStudio();$('#v-cmp').hidden=cur!=='cmp';$('#v-cal').hidden=cur!=='cal';if(cur==='cmp')renderCmp();if(cur==='cal')renderCal();$('#v-agents').hidden=cur!=='agents';$('#v-tasks').hidden=cur!=='tasks';if(cur==='agents')renderAgents();if(cur==='tasks')renderTasks();$('#v-ana').hidden=cur!=='ana';$('#v-set').hidden=cur!=='set';if(cur==='ana')renderAna();if(cur==='set')renderSet();$('#v-mod').hidden=cur!=='mod';$('#v-auto').hidden=cur!=='auto';if(cur==='mod')renderMod();if(cur==='auto')renderAuto();$('#v-asst').hidden=cur!=='asst';if(cur==='asst')renderAsst();
  document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.n===({clients:'Clients',studio:'AI Studio',cmp:'Campaigns',cal:'Calendar',agents:'AI Agents',tasks:'Team Tasks',ana:'Analytics',set:'Settings',mod:'Data Models',auto:'Automation',asst:'Assistant'}[cur]||'Dashboard')))}
 addEventListener('hashchange',route);route();
 </script></body></html>
